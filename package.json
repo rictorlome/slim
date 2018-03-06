@@ -22,12 +22,17 @@
     "test": "test"
   },
   "scripts": {
+    "postinstall": "build",
     "build": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rictorlome/slim.git"
+  },
+  "engines": {
+    "node": "v6.7.0",
+    "npm": "3.10.7"
   },
   "keywords": [],
   "author": "",
