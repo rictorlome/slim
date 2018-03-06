@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ .splashnav {
+   background-color: grey;
+   height: 80px;
+ }
