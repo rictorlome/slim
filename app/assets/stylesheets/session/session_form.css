@@ -1,0 +1,55 @@
+.sessionFormContainer {
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #F9F9F9
+}
+
+.sessionForm {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 470px;
+  height: 300px;
+  border: 1px solid #E9E9E9;
+  box-shadow: 0.25px 0.5px;
+  background-color: #FFFFFF;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sessionForm h3 {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.sessionFormSubtitle {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sessionForm span {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sessionForm .bold {
+  font-weight: bold;
+}
+
+.sessionFormInput {
+  width: 50%;
+  height: 30px;
+  margin: 0 auto;
+  padding: 5px;
+  border: 1px solid #E9E9E9;
+  box-sizing: border-box;
+}
+
+#sessionFormSubmit {
+  border: 1px solid #E9E9E9;
+}

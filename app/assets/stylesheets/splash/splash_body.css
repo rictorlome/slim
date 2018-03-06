@@ -1,0 +1,26 @@
+.splashbody {
+  display: flex;
+  flex-direction: row;
+}
+
+.splashimagecontainer{
+  width: 600px;
+  height: 600px;
+}
+
+.splashimage {
+  height: 450px;
+  width: 450px;
+  position: absolute;
+  top: 150px;
+  left: 75px;
+}
+
+.splashimage img {
+  width: 100%;
+}
+
+.splashform h3 {
+  font-size: 30px;
+  padding-top: 80px;
+}

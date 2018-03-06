@@ -17,4 +17,11 @@
  .splashnav {
    background-color: grey;
    height: 80px;
+   display: flex;
+   flex-direction: row;
+ }
+
+ .splashiconinnerdiv {
+   background-color: white;
+   border-radius: 50;
  }

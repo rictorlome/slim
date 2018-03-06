@@ -1,6 +1,7 @@
 import React from 'react';
 import { merge } from 'lodash';
 import { Link } from 'react-router-dom';
+import { SplashNav } from '../splash/splashnav';
 
 export class SessionForm extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ export class SessionForm extends React.Component {
   }
 
   render () {
+
     let lnk;
     let errs = "";
     if (this.props.formType === 'login') {
@@ -41,18 +43,43 @@ export class SessionForm extends React.Component {
     }
     return (
       <div>
-        <h2>{this.props.formType}</h2>
-        <h3>{lnk}</h3>
-        {errs}
-        <form onSubmit={this.handleSubmit}>
-          <label>Username:
-          <input onChange={this.handleChange('username')} type="text" value={this.state.username}></input>
-          </label><br></br>
-        <label>Password:
-          <input onChange={this.handleChange('password')} type="password" value={this.state.password}></input>
-          </label><br></br>
-        <input type="submit" value="Submit"/>
-        </form>
+        <SplashNav />
+
+        <div className="sessionFormContainer">
+          <h2>{this.props.formType}</h2>
+          <h3>{lnk}</h3>
+          {errs}
+          <form className="sessionForm" onSubmit={this.handleSubmit}>
+            <h3>Sign in to Slim!</h3>
+
+            <div className="sessionFormSubtitle">
+              <span>Enter your</span><span className="bold"> username </span><span>and</span> <span className="bold"> password.</span>
+            </div>
+
+            <br></br>
+            <input className="sessionFormInput"
+              onChange={this.handleChange('username')}
+              type="text"
+              value={this.state.username}
+              placeholder="My username">
+            </input>
+            <br></br>
+
+            <input className="sessionFormInput"
+              onChange={this.handleChange('password')}
+              type="password"
+              value={this.state.password}
+              placeholder="My password">
+            </input>
+            <br></br>
+            <input className="sessionFormInput"
+              id="sessionFormSubmit"
+              type="submit"
+              value="Submit"/>
+          </form>
+        </div>
+
+
       </div>
     );
   }

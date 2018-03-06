@@ -1,0 +1,41 @@
+.splashNav {
+  background-color: #dae0ea;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+  line-height: 80px;
+}
+
+.leftSplashNav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.midSplashNav{
+  flex-grow: 3;
+}
+
+.rightSplashNav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.splashIconInnerDiv {
+  background-color: white;
+  border-radius: 50px;
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+}
+
+.title {
+  position: absolute;
+  left: 80px;
+  font-size: 30px;
+}
