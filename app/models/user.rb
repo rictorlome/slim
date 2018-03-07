@@ -51,7 +51,7 @@ class User < ApplicationRecord
   def join_general
     #Make sure general is in the SEED file.#
     general = Channel.find_by(title: 'general')
-    Participation.create(member_id: self.id, channel_id: general.id)
+    Participation.create(member_id: self.id, channel_id: general.id) if general
   end
 
 end

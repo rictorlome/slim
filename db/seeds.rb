@@ -10,6 +10,7 @@ User.destroy_all
 User.create(username: 'admin', password: 'password')
 
 Channel.destroy_all
-User.first.created_channels.create(title: 'general')
+general = User.first.created_channels.create(title: 'general')
 
 Participation.destroy_all
+Participation.create(member_id: User.first.id, channel_id: general.id)
