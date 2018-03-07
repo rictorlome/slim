@@ -7,6 +7,18 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :created_channels,
+    class_name: 'Channel',
+    foreign_key: :creator_id
+
+  has_many :channel_participations,
+    class_name: 'Participation',
+    foreign_key: :member_id
+
+  has_many :joined_channels,
+    through: :channel_participations,
+    source: :channel
+
   def self.find_by_credentials(username, pw)
     user = User.find_by(username: username)
     user && user.is_password?(pw) ? user : nil

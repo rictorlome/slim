@@ -29,10 +29,18 @@ TODO
 
 -Change font
 
--Add dynamic text to sign in form (sign in vs login)
--Add logo to Nav bar
--Add github, linked in, etc. buttons to navbar
--Add picture to splash page
+DONE -Add dynamic text to sign in form (sign in vs login)
+DONE -Add logo to Nav bar
+DONE -Add github, linked in, etc. buttons to navbar
+DONE -Add picture to splash page
 
--Make navbar size dynamically
--Make splash page size dynamically
+DONE -Make navbar size dynamically
+DONE -Make splash page size dynamically
+
+-Add hover effects to splash and session forms.
+-Move guest login button to exact center of navbar
+-Make guest login use faker gem
+-Remove welcome from navbar
+
+
+-Figure out best query for channel search.
