@@ -1,4 +1,6 @@
-import {RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_SESSION_ERRORS, receiveCurrentUser, receiveSessionErrors} from '../actions/session_actions';
+import {
+  RECEIVE_CURRENT_USER, RECEIVE_SESSION_ERRORS, REMOVE_CURRENT_USER,
+   CLEAR_SESSION_ERRORS, receiveCurrentUser, receiveSessionErrors} from '../actions/session_actions';
 import { merge } from 'lodash';
 
 
@@ -7,6 +9,8 @@ export const sessionReducer = (oldState= { currentUser: null}, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       return {currentUser: action.currentUser};
+    case REMOVE_CURRENT_USER:
+      return {currentUser: null}
     default:
       return oldState;
   }

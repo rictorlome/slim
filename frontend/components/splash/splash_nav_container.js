@@ -6,7 +6,8 @@ import { logout, createGuest } from '../../actions/session_actions';
 
 const msp = (state) => {
   let welcome;
-  Boolean(state.session.currentUser) ? welcome = `Hey, ${state.session.currentUser.username}` : welcome = "Welcome to Slim!";
+  // ${state.entities.users[state.session.currentUser].username}
+  Boolean(state.session.currentUser) ? welcome = `Hey` : welcome = "Welcome to Slim!";
   return {
     loggedIn : Boolean(state.session.currentUser),
     welcome: welcome

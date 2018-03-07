@@ -4,16 +4,24 @@ import secureRandom from 'secure-random';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
+export const REMOVE_CURRENT_USER = 'REMOVE_CURRENT_USER';
 
 export const receiveCurrentUser = ({user, channels}) => {
   debugger
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: {id: user.id},
+    currentUser: user.id,
     user,
     channels
   };
 };
+
+export const removeCurrentUser = () => {
+  return {
+    type: REMOVE_CURRENT_USER,
+    currentUser: null
+  }
+}
 
 export const receiveSessionErrors = (errors) => {
   return {
@@ -44,7 +52,7 @@ export const login = (user) => (dispatch) => {
 
 export const logout = () => (dispatch) => {
   return SessionApiUtil.logout().then(
-    () => dispatch(receiveCurrentUser(null))
+    () => dispatch(removeCurrentUser())
   );
 };
 

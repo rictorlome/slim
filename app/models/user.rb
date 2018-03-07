@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6, allow_nil: true}
 
   after_initialize :ensure_session_token
+  after_create :join_general
 
   attr_reader :password
 
@@ -45,6 +46,12 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token  ||= User.generate_session_token
+  end
+
+  def join_general
+    #Make sure general is in the SEED file.#
+    general = Channel.find_by(title: 'general')
+    Participation.create(member_id: self.id, channel_id: general.id)
   end
 
 end
