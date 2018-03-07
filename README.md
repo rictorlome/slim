@@ -44,3 +44,6 @@ DONE -Make splash page size dynamically
 
 
 -Figure out best query for channel search.
+-Add redirect to channel page on login
+-Add users channels in channel tabel container
+-Add users name and channel info

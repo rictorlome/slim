@@ -6,7 +6,11 @@ export class UpperNav extends React.Component {
   }
 
   render() {
-    
+    return (
+      <div className="upperNavContainer">
+        Hello from the UpperNavContainer
+      </div>
+    )
   }
 
 }

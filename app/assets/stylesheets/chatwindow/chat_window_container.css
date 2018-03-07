@@ -1,0 +1,9 @@
+.ChatWindowContainer {
+  display: flex;
+}
+
+.UpperNavAndFeedContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,13 +1,18 @@
 import React from 'react'
 
-import { ChannelTable } from './channel_table/channel_table';
+import ChannelTable from './channel_table/channel_table_container';
+import { UpperNav } from './upper_nav/upper_nav'
+
 
 export const ChatWindow = (props) => {
   return (
-    <div>
+    <div className="ChatWindowContainer">
       <ChannelTable />
-      <div>
-        Hello from the chatwindow.
+      <div className="UpperNavAndFeedContainer">
+        <UpperNav />
+        <div>
+          Hello from the chatwindow.
+        </div>
       </div>
     </div>
   )
