@@ -1,11 +1,12 @@
 .splashNav {
-  background-color: #dae0ea;
-  height: 80px;
+  background-color: #FFFFFF;
+  height: 70px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   vertical-align: middle;
   line-height: 80px;
+  border-bottom: 1px solid #EBEBEB;
 }
 
 .leftSplashNav {
@@ -18,24 +19,45 @@
   flex-grow: 3;
 }
 
-.rightSplashNav {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: row;
-}
+
 
 .splashIconInnerDiv {
-  background-color: white;
-  border-radius: 50px;
   height: 65px;
   width: 65px;
-  padding-top: 7px;
-  padding-left: 5px;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 .title {
-  padding-left: 80px;
+  padding-left: 15px;
   font-size: 30px;
+  font-weight: bold;
+}
+
+.rightSplashNav {
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.rightSplashNavInnerDiv {
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
+  height: 50px;
+}
+
+.rightSplashNavInnerDiv a {
+  height: 50px;
+}
+
+.guestLoginButton {
+  border: 1px solid black;
+  border-radius: 10px;
+  color: #a8aaad;
+  line-height: 50px;
+  width: 100px;
 }
 
 #logout {

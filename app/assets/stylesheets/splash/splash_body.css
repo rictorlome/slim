@@ -20,6 +20,11 @@
   width: 100%;
 }
 
+.splashform {
+  width: 30vw;
+  padding-right: 30px;
+}
+
 .splashform h3 {
   font-size: 30px;
   padding-top: 80px;
@@ -36,4 +41,14 @@
 
 .splashform input {
   border: 0.5px solid #EEEEEE;
+  border-radius: 7px;
+  height: 49px;
+}
+
+.getStartedButton {
+  background-color: #1E2F9A;
+  border-radius: 7px;
+  color: white;
+  padding: 15px 40px;
+  font-size: 18px;
 }

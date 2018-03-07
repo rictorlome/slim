@@ -1,5 +1,11 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<script>
+  window.mainsplashpic = "<%= asset_path('home_illo@2x.png') %>"
+  window.slacklogo = "<%= asset_path('slack-1.svg') %>"
+  window.github = "<%= asset_path('GitHub-Mark-64px.png') %>"
+  window.linkedin = "<%= asset_path('Logo-LinkedIn.jpg') %>"
+</script>
 <script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render(

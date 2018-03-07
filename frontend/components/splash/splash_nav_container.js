@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { SplashNav } from './splash_nav';
 import { withRouter } from 'react-router-dom';
 
-import { logout } from '../../actions/session_actions';
+import { logout, createGuest } from '../../actions/session_actions';
 
 const msp = (state) => {
   let welcome;
@@ -15,7 +15,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    createGuest: () => dispatch(createGuest())
   };
 };
 
