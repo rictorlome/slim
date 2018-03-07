@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionForm from './session/session_form_container';
 import GreetingContainer from './greeting';
-import { Splash } from './splash/splash';
+import Splash from './splash/splash_container';
 
 
 const App = () => (

@@ -22,3 +22,17 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+TODO
+
+-Add red highlighting to form input fields when flashing errors.
+
+-Change font
+
+-Add dynamic text to sign in form (sign in vs login)
+-Add logo to Nav bar
+-Add github, linked in, etc. buttons to navbar
+-Add picture to splash page
+
+-Make navbar size dynamically
+-Make splash page size dynamically

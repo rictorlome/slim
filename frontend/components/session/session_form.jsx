@@ -1,13 +1,15 @@
 import React from 'react';
 import { merge } from 'lodash';
 import { Link } from 'react-router-dom';
-import { SplashNav } from '../splash/splashnav';
+import SplashNav from '../splash/splash_nav_container';
 
 export class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    let u;
+    props.location.state === undefined ? u = "" : u = props.location.state.username;
     this.state = {
-      username: "",
+      username: u,
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,7 +41,14 @@ export class SessionForm extends React.Component {
       lnk = (<Link to='/login'>Log in!</Link>);
     }
     if (this.props.errors) {
-      errs = this.props.errors.session.map( (error, idx) => (<h3 key={idx}>{error}</h3>));
+      errs = this.props.errors.session.map( (error, idx) => (
+        <div className="sessionErrors" key={idx}>
+          <i id="warning" class="material-icons">warning</i>
+            <div className="innerSessionError">
+              {error}
+            </div>
+        </div>
+      ));
     }
     return (
       <div>

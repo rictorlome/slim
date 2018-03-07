@@ -11,9 +11,9 @@
 .splashimage {
   height: 450px;
   width: 450px;
-  position: absolute;
-  top: 150px;
-  left: 75px;
+  padding-top: 50px;
+  padding-left: 75px;
+  padding-right: 50px;
 }
 
 .splashimage img {
@@ -23,4 +23,17 @@
 .splashform h3 {
   font-size: 30px;
   padding-top: 80px;
+}
+
+.splashform a {
+  color: blue;
+  text-decoration: underline;
+}
+.splashform a:hover {
+  cursor:pointer;
+  background-color: #FFDCC7;
+}
+
+.splashform input {
+  border: 0.5px solid #EEEEEE;
 }
