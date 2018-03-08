@@ -1,0 +1,43 @@
+.thumb {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.thumb:after {
+  content: attr(title);
+  display: none;
+  position: absolute;
+  left: 35%;
+  transform: translateX(-35%);
+  bottom: 22px;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.thumb:before {
+  content: "";
+  display: none;
+  position: absolute;
+  left: 35%;
+  transform: translateX(-100%);
+  top: -7px;
+  border-top: 8px solid #000;
+  border-bottom: 0;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+
+.thumb:hover:before,
+.thumb:hover:after {
+  display: block;
+}
+
+.thumb:hover {
+  transition-delay:0.2s;
+  cursor:pointer;
+  color: #FFFFFF;
+}

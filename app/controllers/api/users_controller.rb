@@ -9,6 +9,17 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    if params[:query].present?
+      @users = User.where('username ~ ?', params[:query])
+    else
+      @users = User.none
+    end
+
+    render :index
+  end  
+
+
   private
 
   def user_params

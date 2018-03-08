@@ -8,7 +8,11 @@ export const CategoryRow = (props) => {
   })
   return (
   <div>
-    {props.type}
+    <div title={props.buttonTitle}
+        className="thumb"
+        onClick={props.openSearch}>
+        {props.type}
+    </div>
     {channels}
   </div>
   )

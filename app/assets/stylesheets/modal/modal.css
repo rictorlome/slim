@@ -1,0 +1,120 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100vh;
+  width: 100vw;
+  transform: translate(-50%, -50%);
+  background: white;
+  display: table;
+}
+
+.OuterSearchDiv {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.InnerSearchDiv {
+  margin: 0 auto;
+  /* background: #FFFFFF; */
+  background: blue;
+  width: 85%;
+  height: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchDivNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.escapeButton {
+  justify-content: flex-end;
+  border-radius: 100%;
+  background-color: white;
+  height: 70px;
+  width: 70px;
+}
+
+.escapeButton:hover {
+  background-color: #E8E8E8;
+  cursor: pointer;
+}
+
+#escape {
+  margin: 0 auto;
+  position: relative;
+  top: 12px;
+  right: -12px;
+  font-size: 45px;
+  color: #717274;
+}
+
+#escape:hover {
+  color: #2C2D30;
+}
+
+.SearchForm {
+  margin-left: 80px;
+  margin-top: 40px;
+  width: 75%;
+}
+
+.SearchHeader {
+  font-size: 40px;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+
+
+.SearchInputDiv {
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.magDiv {
+  height: 45px;
+  background: white;
+  border-radius: 5px;
+  width: 30px;
+}
+
+#searchmag {
+  position: relative;
+  color: #717274;
+  font-size: 30px;
+  top: 8px;
+}
+
+.SearchInput {
+  width: 100%;
+  height: 45px;
+  outline: none;
+  border-radius: 5px;
+}
+
+.searchFeedContainer {
+  background-color: green;
+  margin-top: 40px;
+}
+
+.SearchFeedHeader {
+  background-color: #F9F9F9;
+  height: 35px;
+}

@@ -47,3 +47,12 @@ DONE -Make splash page size dynamically
 -Add redirect to channel page on login
 -Add users channels in channel tabel container
 -Add users name and channel info
+
+
+-Channel search (modal)
+-Browse all channels (on hover)
+-Create channel / Join channel
+
+
+-User search(modal)
+-Create dm
