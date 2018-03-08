@@ -7,7 +7,7 @@ import { createGuest } from './actions/session_actions';
 
 import * as SearchUtil from './util/search_api_util';
 import { searchChannels } from './actions/search_actions.js'
-import { joinChannel } from './actions/channel_actions.js'
+import { joinChannel, leaveChannel } from './actions/channel_actions.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createGuest = createGuest;
   window.searchChannels = searchChannels;
   window.joinChannel = joinChannel;
+  window.leaveChannel = leaveChannel;
 
 
 

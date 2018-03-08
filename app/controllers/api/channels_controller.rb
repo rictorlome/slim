@@ -21,6 +21,11 @@ class Api::ChannelsController < ApplicationController
 
   def leave_channel
     @participation = Participation.find_by(member_id: current_user.id, channel_id: params[:channel_id])
+    if @participation.destroy
+      render json: {channel_id: @participation.channel_id, member_id: @participation.member_id }
+    else
+      render json: {errors: ['Cannot leave channel']}, status: 422
+    end
   end
 
   def join_channel
