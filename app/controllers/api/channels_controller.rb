@@ -1,6 +1,13 @@
 class Api::ChannelsController < ApplicationController
   def index
-    @channels = Channel.includes(:members).where(is_dm: false)
+    if params[:query].present?
+      @channels = Channel.where('title ~ ?', params[:query]).where(is_dm: false)
+    else
+      @channels = Channel.none
+    end
+
+    render :index
+
   end
 
   def create

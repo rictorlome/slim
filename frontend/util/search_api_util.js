@@ -5,3 +5,11 @@ export const searchUsers = (queryVal) => {
     data: {query: queryVal}
   })
 }
+
+export const searchChannels = (queryVal) => {
+  return $.ajax({
+    url: '/api/channels',
+    method: 'GET',
+    data: {query: queryVal}
+  })
+}

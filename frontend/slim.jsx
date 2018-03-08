@@ -6,7 +6,7 @@ import { createGuest } from './actions/session_actions';
 
 
 import * as SearchUtil from './util/search_api_util';
-import { searchUsers } from './actions/search_actions.js'
+import { searchChannels } from './actions/search_actions.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.createGuest = createGuest;
-  window.searchUsers = searchUsers
+  window.searchChannels = searchChannels;
 
 
 
