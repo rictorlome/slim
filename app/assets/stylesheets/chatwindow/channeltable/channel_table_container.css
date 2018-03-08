@@ -3,12 +3,13 @@
   width: 220px;
   background-color: #4C3A4A;
   color: #A696A4;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .ChannelTableUpperDivOuter {
   height: 70px;
   color: #A696A4;
-  font-size: 18px;
+  font-size: 16px;
   padding: 15px;
 }
 

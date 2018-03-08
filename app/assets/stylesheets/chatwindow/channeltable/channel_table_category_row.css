@@ -2,6 +2,10 @@
   display: block;
   position: relative;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .thumb:after {
@@ -9,8 +13,8 @@
   display: none;
   position: absolute;
   left: 35%;
-  transform: translateX(-35%);
-  bottom: 22px;
+  transform: translateX(-45%);
+  bottom: 35px;
   background: #000;
   color: #fff;
   font-size: 12px;
@@ -23,8 +27,8 @@
   display: none;
   position: absolute;
   left: 35%;
-  transform: translateX(-100%);
-  top: -7px;
+  transform: translateX(-250%);
+  top: -1px;
   border-top: 8px solid #000;
   border-bottom: 0;
   border-right: 8px solid transparent;
@@ -34,10 +38,31 @@
 .thumb:hover:before,
 .thumb:hover:after {
   display: block;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }
 
 .thumb:hover {
-  transition-delay:0.2s;
   cursor:pointer;
   color: #FFFFFF;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+
+.ChannelRow {
+  list-style: none;
+  padding-left: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.ChannelRow:hover {
+  background-color: #3E323C;
+  cursor: pointer;
 }
