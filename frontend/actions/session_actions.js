@@ -7,7 +7,6 @@ export const CLEAR_SESSION_ERRORS = 'CLEAR_SESSION_ERRORS';
 export const REMOVE_CURRENT_USER = 'REMOVE_CURRENT_USER';
 
 export const receiveCurrentUser = ({user, channels}) => {
-  debugger
   return {
     type: RECEIVE_CURRENT_USER,
     currentUser: user.id,

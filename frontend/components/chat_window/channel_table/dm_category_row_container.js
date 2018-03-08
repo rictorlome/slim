@@ -2,16 +2,17 @@ import { connect } from 'react-redux'
 
 import { CategoryRow } from './channel_category_row';
 
-import { getCUsPubChannels } from '../../../util/selectors.js';
-// import { channelSearch } from ''
+import { getCUsDMs } from '../../../util/selectors.js';
+// import { userSearch } from ''
 
 const msp = (state) => {
   return {
-    channels: getCUsPubChannels(state)
+    channels: getCUsDMs(state)
   }
 };
 
 // const mdp = (dispatch) => {
 //
 // }
+
 export default connect(msp,null)(CategoryRow)

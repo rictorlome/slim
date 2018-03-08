@@ -25,3 +25,7 @@
    background-color: white;
    border-radius: 50;
  }
+
+ .hidden {
+   display: none;
+ }

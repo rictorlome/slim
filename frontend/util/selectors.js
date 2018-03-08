@@ -1,5 +1,4 @@
 export const getCurrentUsersChannels = (state, isDm) => {
-  debugger
   if (state.session.currentUser) {
     const user_id = state.session.currentUser;
     const user = state.entities.users[user_id];
@@ -18,4 +17,18 @@ export const getCUsPubChannels = (state) => {
 
 export const getCUsDMs = (state) => {
   return getCurrentUsersChannels(state,true);
+}
+
+export const getCUUsername = (state) => {
+  return state.entities.users[state.session.currentUser].username
+}
+
+export const pullRandomChannel = (state) => {
+  if (state.session.currentUser) {
+    const channelIds = state.entities.users[state.session.currentUser].joined_channel_ids
+    debugger
+    return channelIds[Math.floor(Math.random() * channelIds.length)]
+  } else {
+    return undefined;
+  }
 }

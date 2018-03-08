@@ -2,4 +2,59 @@
   height: 100vh;
   width: 220px;
   background-color: #4C3A4A;
+  color: #A696A4;
 }
+
+.ChannelTableUpperDivOuter {
+  height: 70px;
+  color: #A696A4;
+  font-size: 18px;
+  padding: 15px;
+}
+
+.ChannelTableUpperDivOuter:hover {
+  background-color: #3E323C;
+}
+
+.WorkSpace {
+  color: white;
+}
+
+.toggleDropdown {
+  position: absolute;
+  height: 130px;
+  width: 170px;
+  background-color: white;
+  top: 45px;
+  left: 120px;
+  border: 1px solid #D9D9D9;
+  border-radius: 5px;
+}
+
+#downarrow {
+  position: relative;
+  top: 7px;
+  color: #A696A4;
+}
+
+#downarrow:hover {
+  cursor: pointer;
+}
+
+.nameAndButton {
+  display: flex;
+}
+
+#greenbutton {
+  font-size: 11px;
+  background-color: #3D968C;
+  height: 11px;
+  width: 11px;
+  border-radius: 100%;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+/* .ChannelTableUpperDivInner {
+  margin: 15px;
+} */

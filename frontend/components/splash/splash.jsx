@@ -6,6 +6,7 @@ import SplashNav from './splash_nav_container';
 export class Splash extends React.Component {
   constructor(props) {
     super(props);
+    debugger
     this.state = {
       username: '',
       redirect: false
@@ -27,6 +28,10 @@ export class Splash extends React.Component {
             pathname: '/signup',
             state: { username: this.state.username}
           }}/>
+        }
+        {
+          this.props.loggedIn && Boolean(this.props.randomChannel) &&
+           <Redirect to={`/channels/${this.props.randomChannel}`} />
         }
         <SplashNav />
         <div className="splashbody">

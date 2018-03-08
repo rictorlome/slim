@@ -3,19 +3,18 @@ import { withRouter } from 'react-router-dom';
 
 import { ChannelTable } from './channel_table';
 
-import { getCurrentUsersChannels } from '../../../util/selectors.js';
+import { getCurrentUsersChannels, getCUUsername } from '../../../util/selectors.js';
 import { logout } from '../../../actions/session_actions';
 
 
 const msp = (state, ownProps) => {
-  debugger
   return {
-    channels: getCurrentUsersChannels(state)
+    channels: getCurrentUsersChannels(state),
+    username: getCUUsername(state)
   }
 }
 
 const mdp = (dispatch) => {
-  debugger
   return {
     logout: () => dispatch(logout())
   }

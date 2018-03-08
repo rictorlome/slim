@@ -10,13 +10,13 @@ const msp = (state) => {
   Boolean(state.session.currentUser) ? welcome = `Hey` : welcome = "Welcome to Slim!";
   return {
     loggedIn : Boolean(state.session.currentUser),
-    welcome: welcome
+    // welcome: welcome
   };
 };
 
 const mdp = (dispatch) => {
   return {
-    logout: () => dispatch(logout()),
+    // logout: () => dispatch(logout()),
     createGuest: () => dispatch(createGuest())
   };
 };
