@@ -25,6 +25,11 @@ class Api::ChannelsController < ApplicationController
 
   def join_channel
     @participation = Participation.new(member_id: current_user.id, channel_id: params[:channel_id])
+    if @participation.save
+      render json: {channel_id: @participation.channel_id, member_id: @participation.member_id }
+    else
+      render json: {errors: @participation.errors.full_messages}, status: 422
+    end
   end
 
   private

@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import { Search } from './search';
 import { closeModal } from '../../../actions/modal_actions';
+import { searchChannels } from '../../../actions/search_actions'
 
 const msp = (state) => {
   return {
@@ -14,7 +15,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    close: () => dispatch(closeModal())
+    search: (queryVal) => dispatch(searchChannels(queryVal)),
+    close: () => dispatch(closeModal()),
   }
 }
 

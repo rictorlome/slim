@@ -32,3 +32,9 @@ export const pullRandomChannel = (state) => {
     return undefined;
   }
 }
+
+export const getChannelsInSearchBuffer = (state) => {
+  return state.ui.search.map( (index) => {
+    return state.entities.channels[index]; 
+  })
+}
