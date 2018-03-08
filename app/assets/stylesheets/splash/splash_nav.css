@@ -13,6 +13,8 @@
   flex-grow: 1;
   display: flex;
   flex-direction: row;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 
 .midSplashNav{
@@ -29,7 +31,7 @@
 }
 
 .title {
-  padding-left: 15px;
+  margin-left: -3px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -53,11 +55,13 @@
 }
 
 .guestLoginButton {
+  margin-top: 5px;
   border: 1px solid black;
   border-radius: 10px;
   color: #a8aaad;
   line-height: 50px;
-  width: 100px;
+  width: 115px;
+  font-family: 'Raleway', sans-serif;
 }
 
 #logout {

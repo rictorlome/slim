@@ -13,16 +13,20 @@
   max-width: 470px;
   border: .5px solid #E9E9E9;
   box-shadow: 0.25px 0.25px;
-  border-left: 5px solid #D92540;
+  /* border-left: 5px solid #D92540; */
   height: auto;
   font: 16px;
   vertical-align: center;
   line-height: 100%;
-  border-radius: 1.5px;
+  border-radius: 5px;
   display: flex;
+  -webkit-box-shadow: inset 4.5px 0px 0px 0px rgba(213,46,67,1);
+  -moz-box-shadow: inset 4.5px 0px 0px 0px rgba(213,46,67,1);
+  box-shadow: inset 4.5px 0px 0px 0px rgba(213,46,67,1);
 }
 
 .innerSessionError {
+  padding-bottom: 10px;
   margin-bottom: 5px;
   display: block;
   position: relative;
@@ -31,6 +35,7 @@
 
 #warning {
   margin-left: 5px;
+  padding-left: 5px;
   padding-right: 5px;
   color: red;
   padding-top: 3.5px;
@@ -49,12 +54,15 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 5px;
+  padding: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .sessionForm h3 {
   margin: 0 auto;
   text-align: center;
-  font-size: 30px;
+  font-size: 36px;
   font-weight: bold;
   padding-bottom: 20px;
   padding-top: 10px;
@@ -88,6 +96,7 @@
   border: 1px solid #E9E9E9;
   background-color: #26A868;
   color: #FFFFFF;
+  font-size: 22px;
   font-weight: 500;
 }
 .alternativeLinks {

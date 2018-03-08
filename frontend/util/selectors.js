@@ -26,7 +26,6 @@ export const getCUUsername = (state) => {
 export const pullRandomChannel = (state) => {
   if (state.session.currentUser) {
     const channelIds = state.entities.users[state.session.currentUser].joined_channel_ids
-    debugger
     return channelIds[Math.floor(Math.random() * channelIds.length)]
   } else {
     return undefined;
@@ -35,6 +34,6 @@ export const pullRandomChannel = (state) => {
 
 export const getChannelsInSearchBuffer = (state) => {
   return state.ui.search.map( (index) => {
-    return state.entities.channels[index]; 
+    return state.entities.channels[index];
   })
 }

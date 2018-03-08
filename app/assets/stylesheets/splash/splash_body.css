@@ -23,32 +23,47 @@
 .splashform {
   width: 30vw;
   padding-right: 30px;
+  font-family: 'Playfair Display', serif;
 }
 
 .splashform h3 {
-  font-size: 30px;
+  font-size: 48px;
   padding-top: 80px;
+  margin-bottom: 20px;
+}
+
+.splashtext {
+  letter-spacing: 1.5px;
 }
 
 .splashform a {
   color: blue;
   text-decoration: underline;
-}
-.splashform a:hover {
   cursor:pointer;
-  background-color: #FFDCC7;
 }
 
 .splashform input {
   border: 0.5px solid #EEEEEE;
   border-radius: 7px;
   height: 49px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .getStartedButton {
-  background-color: #1E2F9A;
+  background-color: #4049AA;
   border-radius: 7px;
   color: white;
   padding: 15px 40px;
   font-size: 18px;
+  cursor: pointer;
+}
+
+.getStartedButton:hover {
+  background-color: #1E2F9A;
+  -webkit-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  transition: all 500ms ease;
 }

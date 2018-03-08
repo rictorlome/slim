@@ -6,7 +6,6 @@ import SplashNav from './splash_nav_container';
 export class Splash extends React.Component {
   constructor(props) {
     super(props);
-    debugger
     this.state = {
       username: '',
       redirect: false

@@ -10,7 +10,7 @@ export const SplashNav = (props) => {
               <img src={window.slacklogo} height="50px" width="50px" />
             </div>
           </div>
-          <div className="title"> Slim </div>
+          <div className="title"> slim </div>
         </div>
 
         <div className="midSplashNav">

@@ -49,10 +49,19 @@ DONE -Make splash page size dynamically
 -Add users name and channel info
 
 
--Channel search (modal)
+DONE -Channel search (modal)
 -Browse all channels (on hover)
 -Create channel / Join channel
 
 
 -User search(modal)
 -Create dm
+
+0. Start using fonts.
+0. Fix styling of
+0. Fix styling of logout button.
+1. Fix styling of channel table index.
+  - Fix timing of hover popup.
+  - 
+2. Fix styling of search modals.
+3. Add info for SearchRowIndex. (Number of Members)
