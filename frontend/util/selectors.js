@@ -56,3 +56,15 @@ export const findGeneral = (state) => {
     }
   }
 }
+
+export const getSelectedUsers = (state) => {
+  return state.ui.selected.map( (id) => {
+    return state.entities.users[id]
+  })
+}
+
+export const getNamesOfSelectedUsers = (state) => {
+  return state.ui.selected.map( (id) => {
+    return state.entities.users[id].username
+  }).join(', ')
+}

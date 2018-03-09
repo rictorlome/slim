@@ -5,5 +5,6 @@ class Participation < ApplicationRecord
 
   belongs_to :channel,
     class_name: 'Channel',
+    inverse_of: :memberships,
     foreign_key: :channel_id
 end

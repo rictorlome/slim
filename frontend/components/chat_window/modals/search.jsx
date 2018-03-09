@@ -3,15 +3,17 @@ import React from 'react';
 import ChannelFeed from './channel_feed_container';
 import UserFeed from './user_feed_container';
 
+import SearchBuffer from './search_buffer_container'
+
 export class Search extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      title: ''
+      title: '',
+      is_dm: props.type === 'User'
     }
     this.updateTitle = this.updateTitle.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
-    debugger
   }
 
   updateTitle(e) {
@@ -26,7 +28,6 @@ export class Search extends React.Component{
     if (this.state.title && e.key === 'Enter') {
       this.props.createChannel(this.state).then(
         (channel) => {
-          debugger
           return this.props.history.push(`/channels/${channel.channel.id}`)
         }
       ).then(() => this.props.close())
@@ -48,7 +49,12 @@ export class Search extends React.Component{
           </div>
 
           <form onKeyPress={this.handleEnter} className="SearchForm">
-            <div className="SearchHeader">{this.props.header}</div>
+
+            <div className="SearchHeader">
+              {this.props.header}
+              {this.props.type === 'User' && <SearchBuffer />}
+            </div>
+
               <div className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
                 <div className="magDiv">
                   <i id="searchmag" className="material-icons">search</i>

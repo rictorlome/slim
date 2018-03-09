@@ -51,3 +51,11 @@ export const createChannel = (channel) => (dispatch) => {
     (channel) => dispatch(receiveChannel(channel))
   )
 }
+
+export const createDM = () => (dispatch, getState) => {
+  const channel = {};
+  channel['member_ids'] = getState().ui.selected;
+  channel['title'] = getNamesOfSelectedUsers(getState());
+  channel['is_dm'] = true;
+  return ChannelApiUtil.createChannel(channel)
+}

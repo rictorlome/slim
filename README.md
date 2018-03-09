@@ -37,6 +37,8 @@ DONE -Add picture to splash page
 DONE -Make navbar size dynamically
 DONE -Make splash page size dynamically
 
+-Make sure you cannot SEARCH YOURSELF!!!
+
 -Add hover effects to splash and session forms.
 -Move guest login button to exact center of navbar
 -Make guest login use faker gem

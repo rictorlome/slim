@@ -40,6 +40,6 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channel_params
-    params.require(:channel).permit(:title)
+    params.require(:channel).permit(:title, :is_dm, member_ids: [])
   end
 end

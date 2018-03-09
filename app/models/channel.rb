@@ -9,6 +9,7 @@ class Channel < ApplicationRecord
   has_many :memberships,
     class_name: 'Participation',
     foreign_key: :channel_id,
+    inverse_of: :channel,
     dependent: :destroy
 
   has_many :members,
