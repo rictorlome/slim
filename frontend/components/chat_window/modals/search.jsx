@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ChannelFeed from './channel_feed_container';
+import UserFeed from './user_feed_container';
 
 export class Search extends React.Component{
   constructor(props) {
@@ -10,6 +11,7 @@ export class Search extends React.Component{
     }
     this.updateTitle = this.updateTitle.bind(this);
   }
+
   updateTitle(e) {
     if (this.timeout) {
       clearTimeout(this.timeout);
@@ -17,6 +19,11 @@ export class Search extends React.Component{
     this.setState({title: e.target.value})
     this.timeout = setTimeout(() => (this.props.search(this.state.title)), 500)
   }
+
+  componentWillMount() {
+    this.props.clear();
+  }
+
   render() {
     return (
       <div className="OuterSearchDiv">
@@ -29,26 +36,29 @@ export class Search extends React.Component{
 
           <form className="SearchForm">
             <div className="SearchHeader">{this.props.header}</div>
-            <div className="SearchInputDiv">
-              <div className="magDiv">
-                <i id="searchmag" className="material-icons">search</i>
-              </div>
-              <input className="SearchInput"
+              <div className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
+                <div className="magDiv">
+                  <i id="searchmag" className="material-icons">search</i>
+                </div>
+
+              <input className={this.props.type === 'Channel' ? "SearchInput" : "UserSearchInput"}
                 placeholder={this.props.inputPlaceholder}
                 value={this.state.title}
-                onChange={this.updateTitle}
-                ></input>
-            </div>
+                onChange={this.updateTitle}></input>
+
+              {this.props.type === 'User' && (<div className="GoButton">Go</div>)}
 
             <div className="searchFeedContainer">
               <div className="SearchFeedHeader">
                 {this.props.searchFeedHeader}
               </div>
               <div className="searchFeed">
-                <ChannelFeed />
+                {this.props.type === 'Channel' && <ChannelFeed />}
+                {this.props.type === 'User' && <UserFeed />}
               </div>
             </div>
-          </form>
+          </div>
+        </form>
         </div>
       </div>
     );

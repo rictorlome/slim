@@ -37,3 +37,8 @@ export const getChannelsInSearchBuffer = (state) => {
     return state.entities.channels[index];
   })
 }
+export const getUsersInSearchBuffer = (state) => {
+  return state.ui.search.map( (index) => {
+    return state.entities.users[index];
+  })
+}

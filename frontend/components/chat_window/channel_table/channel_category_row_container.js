@@ -1,9 +1,11 @@
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
 
 import { CategoryRow } from './channel_category_row';
 
 import { getCUsPubChannels } from '../../../util/selectors.js';
 import { openModal } from '../../../actions/modal_actions.js';
+import { selectChannel } from '../../../actions/select_actions.js';
 // import { channelSearch } from ''
 
 const msp = (state) => {
@@ -13,9 +15,10 @@ const msp = (state) => {
   }
 };
 
-const mdp = (dispatch) => {
+const mdp = (dispatch, ownProps) => {
   return {
-    openSearch: () => dispatch(openModal('ChannelSearch'))
+    openSearch: () => dispatch(openModal('ChannelSearch')),
+    selectChannel: (id) => dispatch(selectChannel(ownProps.match.params.channelId))
   }
 }
-export default connect(msp,mdp)(CategoryRow)
+export default withRouter(connect(msp,mdp)(CategoryRow))

@@ -62,7 +62,17 @@
   padding-bottom: 4px;
 }
 
+.selected {
+  background-color: #499789;
+  color: #FFFFFF;
+}
 .ChannelRow:hover {
   background-color: #3E323C;
   cursor: pointer;
+  font-weight: lighter;
+}
+
+.selected:hover {
+  background-color: #499789;
+  color: #FFFFFF;
 }

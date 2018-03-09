@@ -2,18 +2,33 @@ import React from 'react';
 
 import { ChannelRow } from './channel_row';
 
-export const CategoryRow = (props) => {
-  const channels = props.channels.map( (channel) => {
-    return (<ChannelRow  key={channel.id} channel={channel} />)
-  })
-  return (
-  <div>
-    <div title={props.buttonTitle}
-        className="thumb"
-        onClick={props.openSearch}>
-        {props.type}
-    </div>
-    {channels}
-  </div>
-  )
+export class CategoryRow extends React.Component{
+  constructor(props) {
+    super(props)
+  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.match.params.channelId !== nextProps.match.params.channelId) {
+  //     this.props.selectChannel(nextProps.match.params.channelId)
+  //   }
+  // }
+  
+  render() {
+    const channels = this.props.channels.map( (channel) => {
+      return (<ChannelRow
+        selected={parseInt(this.props.match.params.channelId) === channel.id}
+        onClick={() => this.props.selectChannel(channel.id)}
+        key={channel.id}
+        channel={channel} />)
+      })
+      return (
+        <div>
+          <div title={this.props.buttonTitle}
+            className="thumb"
+            onClick={this.props.openSearch}>
+            {this.props.type}
+          </div>
+          {channels}
+        </div>
+      )
+  }
 };
