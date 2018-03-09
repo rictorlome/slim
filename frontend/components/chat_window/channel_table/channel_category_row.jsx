@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ChannelRow } from './channel_row';
+import ChannelRow from './channel_row';
 
 export class CategoryRow extends React.Component{
   constructor(props) {
@@ -11,13 +11,13 @@ export class CategoryRow extends React.Component{
   //     this.props.selectChannel(nextProps.match.params.channelId)
   //   }
   // }
-  
+
   render() {
     const channels = this.props.channels.map( (channel) => {
       return (<ChannelRow
-        selected={parseInt(this.props.match.params.channelId) === channel.id}
-        onClick={() => this.props.selectChannel(channel.id)}
         key={channel.id}
+        general={this.props.general}
+        leave={this.props.leave}
         channel={channel} />)
       })
       return (

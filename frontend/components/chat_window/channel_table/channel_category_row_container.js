@@ -3,22 +3,23 @@ import { withRouter } from 'react-router-dom';
 
 import { CategoryRow } from './channel_category_row';
 
-import { getCUsPubChannels } from '../../../util/selectors.js';
+import { getCUsPubChannels, findGeneral } from '../../../util/selectors.js';
 import { openModal } from '../../../actions/modal_actions.js';
-import { selectChannel } from '../../../actions/select_actions.js';
-// import { channelSearch } from ''
+import { leaveChannel } from '../../../actions/channel_actions';
 
 const msp = (state) => {
-  return {
+  const x = {
     channels: getCUsPubChannels(state),
-    buttonTitle: 'Browse all channels'
+    buttonTitle: 'Browse all channels',
+    general: findGeneral(state)
   }
+  return x;
 };
 
 const mdp = (dispatch, ownProps) => {
   return {
     openSearch: () => dispatch(openModal('ChannelSearch')),
-    selectChannel: (id) => dispatch(selectChannel(ownProps.match.params.channelId))
+    leave: (id) => dispatch(leaveChannel(id))
   }
 }
 export default withRouter(connect(msp,mdp)(CategoryRow))

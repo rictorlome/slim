@@ -57,11 +57,19 @@ DONE -Channel search (modal)
 -User search(modal)
 -Create dm
 
-0. Start using fonts.
-0. Fix styling of
-0. Fix styling of logout button.
-1. Fix styling of channel table index.
-  - Fix timing of hover popup.
-  - 
+DONE. Start using fonts.
+DONE . Fix styling of logout button.
+DONE . Fix styling of channel table index.
+DONE Fix timing of hover popup.
+  -
 2. Fix styling of search modals.
 3. Add info for SearchRowIndex. (Number of Members)
+
+Tomorrow I need to do the following:
+
+1. Add create new channel and dm.
+  - Make user search items clickable.
+  - Make user search build up a buffer of users.
+2. Add leave channel or dm at click.
+3. Add channel info to upper nav.
+4. Get membership info from backend with channel searches.

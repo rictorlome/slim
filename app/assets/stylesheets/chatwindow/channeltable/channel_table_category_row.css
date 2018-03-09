@@ -60,6 +60,9 @@
   padding-left: 15px;
   padding-top: 4px;
   padding-bottom: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .selected {
@@ -74,5 +77,21 @@
 
 .selected:hover {
   background-color: #499789;
+  color: #FFFFFF;
+}
+
+.ChannelRowInnerDiv {
+  margin-right: 10px;
+}
+
+#leaveChannel {
+  font-size: 20px;
+  position: relative;
+  vertical-align: top;
+  bottom: -7px;
+  line-height: 0px;
+}
+
+#leaveChannel:hover {
   color: #FFFFFF;
 }

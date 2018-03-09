@@ -26,7 +26,9 @@ export const removeChannelFromCurrentUser = (participation) => {
 
 export const joinChannel = (id) => (dispatch) => {
   return ChannelApiUtil.joinChannel(id).then(
-    (participation) => dispatch(addChannelToCurrentUser(participation))
+    (participation) => {
+      return dispatch(addChannelToCurrentUser(participation))
+    }
   )
 }
 

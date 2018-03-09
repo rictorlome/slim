@@ -19,7 +19,7 @@ export const userReducer = (oldState={}, action) => {
       copy = merge({},oldState)
       const arr = copy[action.participation.member_id].joined_channel_ids
       const index = arr.indexOf(action.participation.channel_id)
-      if (index !== 1) arr.splice(index, 1);
+      if (index !== -1) arr.splice(index, 1);
       return copy;
     default:
       return oldState;

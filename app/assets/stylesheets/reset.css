@@ -65,3 +65,7 @@ button, input[type="submit"], input[type="reset"] {
 input {
 	outline: none;
 }
+a {
+	text-decoration: none;
+	color: inherit;
+}

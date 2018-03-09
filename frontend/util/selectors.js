@@ -1,10 +1,10 @@
-export const getCurrentUsersChannels = (state, isDm) => {
+export const getCurrentUsersChannels = (state) => {
   if (state.session.currentUser) {
     const user_id = state.session.currentUser;
     const user = state.entities.users[user_id];
     const channel_ids = user.joined_channel_ids;
-    return Object.values(state.entities.channels).filter( (channel) => {
-      return channel_ids.includes(channel.id) && (isDm === channel.is_dm)
+    return channel_ids.map( (id) => {
+      return state.entities.channels[id]
     })
   } else {
     return [];
@@ -12,11 +12,15 @@ export const getCurrentUsersChannels = (state, isDm) => {
 };
 
 export const getCUsPubChannels = (state) => {
-  return getCurrentUsersChannels(state,false);
+  return getCurrentUsersChannels(state).filter( (channel) => {
+    return !channel.is_dm
+  });
 };
 
 export const getCUsDMs = (state) => {
-  return getCurrentUsersChannels(state,true);
+  return getCurrentUsersChannels(state).filter( (channel) => {
+    return channel.is_dm
+  });
 }
 
 export const getCUUsername = (state) => {
@@ -41,4 +45,14 @@ export const getUsersInSearchBuffer = (state) => {
   return state.ui.search.map( (index) => {
     return state.entities.users[index];
   })
+}
+
+export const findGeneral = (state) => {
+  let channels = Object.values(state.entities.channels)
+  for (let i = 0; i < channels.length; i++) {
+    let channel = channels[i];
+    if (channel.title === 'general') {
+      return channel.id;
+    }
+  }
 }
