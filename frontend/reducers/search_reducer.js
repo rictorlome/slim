@@ -1,5 +1,5 @@
 import { RECEIVE_USERS } from '../actions/user_actions.js'
-import { RECEIVE_CHANNELS, RECEIVE_CHANNEL } from '../actions/channel_actions.js'
+import { RECEIVE_CHANNELS, RECEIVE_CHANNEL, RECEIVE_DM } from '../actions/channel_actions.js'
 import { SELECT_USER, UNSELECT_USER } from '../actions/select_actions';
 
 import { CLEAR_SEARCH } from '../actions/search_actions';
@@ -13,6 +13,7 @@ export const searchReducer = (oldState=[], action) => {
       return Object.keys(action.channels);
     case CLEAR_SEARCH:
     case RECEIVE_CHANNEL:
+    case RECEIVE_DM:
       return [];
     case SELECT_USER:
       const copy = oldState.slice()

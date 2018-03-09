@@ -65,7 +65,12 @@ export class Search extends React.Component{
                 value={this.state.title}
                 onChange={this.updateTitle}></input>
 
-              {this.props.type === 'User' && (<div className="GoButton">Go</div>)}
+              {this.props.type === 'User' && (<div
+                onClick={() => this.props.createDM().then(
+                  (channel) => {
+                    this.props.history.push(`/channels/${channel.channel.id}`)
+                  }
+                ).then(() => this.props.close())} className="GoButton">Go</div>)}
 
             <div className="searchFeedContainer">
               <div className="SearchFeedHeader">

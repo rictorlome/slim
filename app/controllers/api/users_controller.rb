@@ -11,13 +11,14 @@ class Api::UsersController < ApplicationController
 
   def index
     if params[:query].present?
-      @users = User.where('username ~ ?', params[:query])
+      @users = User.includes(:joined_channels).where('username != ?', current_user.username)
+      .where('username ~ ?', params[:query])
     else
       @users = User.none
     end
 
     render :index
-  end  
+  end
 
 
   private

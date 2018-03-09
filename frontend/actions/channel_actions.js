@@ -2,6 +2,9 @@ export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
 export const ADD_CHANNEL_TO_CURRENT_USER = 'ADD_CHANNEL_TO_CURRENT_USER';
 export const REMOVE_CHANNEL_FROM_CURRENT_USER = 'REMOVE_CHANNEL_FROM_CURRENT_USER';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
+export const RECEIVE_DM = 'RECEIVE_DM';
+
+import { getNamesOfSelectedUsers, getCUUsername } from '../util/selectors'
 
 import * as ChannelApiUtil from '../util/channel_api_util.js';
 
@@ -15,6 +18,13 @@ export const receiveChannels = (channels) => {
 export const receiveChannel = (channel) => {
   return {
     type: RECEIVE_CHANNEL,
+    channel
+  }
+}
+
+export const receiveDM = (channel) => {
+  return {
+    type: RECEIVE_DM,
     channel
   }
 }
@@ -55,7 +65,9 @@ export const createChannel = (channel) => (dispatch) => {
 export const createDM = () => (dispatch, getState) => {
   const channel = {};
   channel['member_ids'] = getState().ui.selected;
-  channel['title'] = getNamesOfSelectedUsers(getState());
+  channel['title'] = getNamesOfSelectedUsers(getState()).concat(`, `).concat(getCUUsername(getState()));
   channel['is_dm'] = true;
-  return ChannelApiUtil.createChannel(channel)
+  return ChannelApiUtil.createChannel(channel).then(
+    (channel) => dispatch(receiveDM(channel))
+  )
 }

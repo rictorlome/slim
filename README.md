@@ -37,7 +37,7 @@ DONE -Add picture to splash page
 DONE -Make navbar size dynamically
 DONE -Make splash page size dynamically
 
--Make sure you cannot SEARCH YOURSELF!!!
+DONE -Make sure you cannot SEARCH YOURSELF!!!
 
 -Add hover effects to splash and session forms.
 -Move guest login button to exact center of navbar
@@ -70,9 +70,9 @@ DONE Fix timing of hover popup.
 Tomorrow I need to do the following:
 
 0. Make sure arrow does not drop below your workspace in channel table.
-1. Add create new channel and dm.
+DONE 1. Add create new channel and dm.
   - Make user search items clickable.
   - Make user search build up a buffer of users.
 DONE . Add leave channel or dm at click.
 3. Add channel info to upper nav.
-4. Get membership info from backend with channel searches.
+DONE 4. Get membership info from backend with channel searches.
