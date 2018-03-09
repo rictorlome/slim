@@ -14,10 +14,11 @@ export const ChannelFeed = (props) => {
       </div>
     )
   })
+  let message;
+  props.channels.length !== 0 ? message = channels : message = 'No such channel! Hit enter to make it!'
   return (
     <div>
-      Hello from the channel feed.
-      {channels}
+      {message}
     </div>
   )
 }

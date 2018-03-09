@@ -1,6 +1,6 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions.js';
 import { RECEIVE_USERS } from '../actions/user_actions.js';
-import { ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER } from '../actions/channel_actions';
+import { ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER, RECEIVE_CHANNEL } from '../actions/channel_actions';
 
 import { merge } from 'lodash';
 
@@ -20,6 +20,10 @@ export const userReducer = (oldState={}, action) => {
       const arr = copy[action.participation.member_id].joined_channel_ids
       const index = arr.indexOf(action.participation.channel_id)
       if (index !== -1) arr.splice(index, 1);
+      return copy;
+    case RECEIVE_CHANNEL:
+      copy = merge({},oldState);
+      copy[action.channel.creator_id].joined_channel_ids.push(action.channel.id)
       return copy;
     default:
       return oldState;

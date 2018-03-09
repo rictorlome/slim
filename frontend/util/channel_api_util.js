@@ -11,3 +11,11 @@ export const leaveChannel = (id) => {
     method: 'DELETE'
   })
 }
+
+export const createChannel = (channel) => {
+  return $.ajax({
+    url: '/api/channels',
+    method: 'POST',
+    data: {channel}
+  })
+}

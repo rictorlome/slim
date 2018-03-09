@@ -10,6 +10,8 @@ export class Search extends React.Component{
       title: ''
     }
     this.updateTitle = this.updateTitle.bind(this);
+    this.handleEnter = this.handleEnter.bind(this);
+    debugger
   }
 
   updateTitle(e) {
@@ -17,7 +19,18 @@ export class Search extends React.Component{
       clearTimeout(this.timeout);
     }
     this.setState({title: e.target.value})
-    this.timeout = setTimeout(() => (this.props.search(this.state.title)), 500)
+    this.timeout = setTimeout(() => (this.props.search(this.state.title)), 300)
+  }
+
+  handleEnter(e) {
+    if (this.state.title && e.key === 'Enter') {
+      this.props.createChannel(this.state).then(
+        (channel) => {
+          debugger
+          return this.props.history.push(`/channels/${channel.channel.id}`)
+        }
+      ).then(() => this.props.close())
+    }
   }
 
   componentWillMount() {
@@ -34,7 +47,7 @@ export class Search extends React.Component{
             </div>
           </div>
 
-          <form className="SearchForm">
+          <form onKeyPress={this.handleEnter} className="SearchForm">
             <div className="SearchHeader">{this.props.header}</div>
               <div className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
                 <div className="magDiv">
@@ -53,8 +66,8 @@ export class Search extends React.Component{
                 {this.props.searchFeedHeader}
               </div>
               <div className="searchFeed">
-                {this.props.type === 'Channel' && <ChannelFeed />}
-                {this.props.type === 'User' && <UserFeed />}
+                {this.props.type === 'Channel' && this.state.title && <ChannelFeed />}
+                {this.props.type === 'User' && this.state.title && <UserFeed />}
               </div>
             </div>
           </div>
