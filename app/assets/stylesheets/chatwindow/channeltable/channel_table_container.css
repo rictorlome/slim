@@ -1,5 +1,6 @@
 .ChannelTableContainer {
   height: 100vh;
+  min-width: 187px;
   width: 220px;
   background-color: #4C3A4A;
   color: #A696A4;

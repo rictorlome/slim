@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom';
 
 import { CategoryRow } from './channel_category_row';
 
@@ -22,4 +23,4 @@ const mdp = (dispatch) => {
   }
 }
 
-export default connect(msp,mdp)(CategoryRow)
+export default withRouter(connect(msp,mdp)(CategoryRow))

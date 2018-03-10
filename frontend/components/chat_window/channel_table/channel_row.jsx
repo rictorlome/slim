@@ -30,18 +30,11 @@ class ChannelRow extends React.Component {
     )
   }
 
-  pickNumber() {
-    const a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine '];
+  pickSource() {
+    const a = ['',window.oneicon,window.twoicon,window.threeicon,window.fouricon,window.fiveicon,
+              window.sixicon,window.sevenicon,window.eighticon,window.nineicon];
     let num = this.props.channel.member_ids.length;
-    if (num <= 2) {
-      return (
-        `looks_${word}`
-      )
-    } else if (num > 2 && num < 7) {
-      return `looks_${num}`
-    } else {
-      return ``
-    }
+    return a[num]
   }
 
   render() {
@@ -50,18 +43,18 @@ class ChannelRow extends React.Component {
     let message;
     if (this.props.channel.is_dm) {
       message = (
-      <span>
-        <i id="number" className="material-icons">{this.pickNumber()}</i> {title}
-      </span>
+      <div>
+        <img id="number" src={this.pickSource()} height="13px" weight="13px"></img>
+        {title}
+      </div>
     )
     } else {
       message = (
-        <span>
+        <div>
           {"#".concat('   ').concat(title)}
-        </span>
+        </div>
       )
     }
-    debugger
     return (
       <NavLink
         to={`/channels/${this.props.channel.id}`}

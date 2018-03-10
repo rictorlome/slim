@@ -97,8 +97,7 @@
 }
 
 #number {
-  font-size: 18px;
   position: relative;
-  top: 3px;
-  line-height: 0px;
+  top: 2px;
+  margin-right: 5px;
 }
