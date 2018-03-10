@@ -69,10 +69,19 @@ DONE Fix timing of hover popup.
 
 Tomorrow I need to do the following:
 
-0. Make sure arrow does not drop below your workspace in channel table.
+DONE. Make sure arrow does not drop below your workspace in channel table.
 DONE 1. Add create new channel and dm.
   - Make user search items clickable.
   - Make user search build up a buffer of users.
 DONE . Add leave channel or dm at click.
 3. Add channel info to upper nav.
 DONE 4. Get membership info from backend with channel searches.
+
+5. Set a cap on max people in DM.
+6. Add channel info into upper nav.
+7. Style DM and Channel search.
+8. Add message model.
+9. Add message controller.
+
+TODAY
+1. Style upper nav container.

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ChannelTable from './channel_table/channel_table_container';
-import { UpperNav } from './upper_nav/upper_nav'
+import UpperNav from './upper_nav/upper_nav_container'
 
 import Modal from './modals/modal'
 

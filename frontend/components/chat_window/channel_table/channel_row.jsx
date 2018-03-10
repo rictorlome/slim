@@ -39,7 +39,7 @@ class ChannelRow extends React.Component {
 
   render() {
     let title;
-    this.props.channel.title.length > 10 ? title = this.props.channel.title.slice(0,13).concat('...') : title = this.props.channel.title
+    this.props.channel.title.length > 10 ? title = this.props.channel.title.slice(0,12).concat('...') : title = this.props.channel.title
     let message;
     if (this.props.channel.is_dm) {
       message = (

@@ -23,6 +23,10 @@ export const getCUsDMs = (state) => {
   });
 }
 
+export const getCurrentChannel = (state, ownProps) => {
+  return state.entities.channels[Number(ownProps.match.params.channelId)]
+}
+
 export const getCUUsername = (state) => {
   return state.entities.users[state.session.currentUser].username
 }
