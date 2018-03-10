@@ -14,6 +14,7 @@ export class Search extends React.Component{
     }
     this.updateTitle = this.updateTitle.bind(this);
     this.handleEnter = this.handleEnter.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   updateTitle(e) {
@@ -38,6 +39,16 @@ export class Search extends React.Component{
     this.props.clear();
   }
 
+  handleClick(e) {
+    if (this.props.active) {
+      this.props.createDM().then(
+        (channel) => {
+          this.props.history.push(`/channels/${channel.channel.id}`)
+        }
+      ).then(() => this.props.close())
+    }
+  }
+
   render() {
     return (
       <div className="OuterSearchDiv">
@@ -51,29 +62,29 @@ export class Search extends React.Component{
           <form onKeyPress={this.handleEnter} className="SearchForm">
 
             <div className="SearchHeader">
-              {this.props.header}
-              {this.props.type === 'User' && <SearchBuffer />}
-            </div>
+              <div className="InnerSearchHeader">{this.props.header}</div>
 
+            </div>
+            <div className="SearchInputAndButton">
               <div className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
-                <div className="magDiv">
+                {this.props.type === 'Channel' && <div className="magDiv">
                   <i id="searchmag" className="material-icons">search</i>
                 </div>
-
-              <input className={this.props.type === 'Channel' ? "SearchInput" : "UserSearchInput"}
-                placeholder={this.props.inputPlaceholder}
-                value={this.state.title}
-                onChange={this.updateTitle}></input>
+                }
+                {this.props.type === 'User' && <SearchBuffer />}
+                <input className={this.props.type === 'Channel' ? "SearchInput" : "UserSearchInput"}
+                  placeholder={this.props.inputPlaceholder}
+                  value={this.state.title}
+                  onChange={this.updateTitle}></input>
+              </div>
 
               {this.props.type === 'User' && (<div
-                onClick={() => this.props.createDM().then(
-                  (channel) => {
-                    this.props.history.push(`/channels/${channel.channel.id}`)
-                  }
-                ).then(() => this.props.close())} className="GoButton">Go</div>)}
+                onClick={this.handleClick}
+                className={this.props.active ? "GoButton" : "GoButton Disabled"}>Go</div>)}
+              </div>
 
             <div className="searchFeedContainer">
-              <div className="SearchFeedHeader">
+              <div className={this.props.type === 'Channel' ? "SearchFeedHeader" : "UserSearchFeedHeader"}>
                 {this.props.searchFeedHeader}
               </div>
               <div className="searchFeed">
@@ -81,7 +92,6 @@ export class Search extends React.Component{
                 {this.props.type === 'User' && this.state.title && <UserFeed />}
               </div>
             </div>
-          </div>
         </form>
         </div>
       </div>

@@ -1,0 +1,33 @@
+.InnerSearchHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchBuffer {
+  display: flex;
+  flex-direction: row;
+  max-width: 520px;
+  flex-wrap: wrap;
+}
+
+.SearchBufferItemWrapper {
+  font-size: 12px;
+  color: #D5EAF9;
+  background-color: #359CE0;
+  padding: 7px;
+  margin: 5px 5px 5px 5px;
+  max-height: 25px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  cursor: pointer;
+  line-height: 20px;
+  height: 20px;
+}
+
+#removeUser {
+  margin-left: 2px;
+  font-size: 14px;
+  position: relative;
+  top: 3px;
+}

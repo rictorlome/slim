@@ -11,7 +11,6 @@ export const UserFeed = (props) => {
 
   return (
     <div className="UserFeedWrapper">
-      Hello from the user feed.
       {users}
     </div>
   )

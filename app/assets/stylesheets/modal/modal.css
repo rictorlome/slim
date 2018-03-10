@@ -79,7 +79,10 @@
   font-weight: bold;
   padding-bottom: 40px;
   color: #2C2D30;
+  min-width: 255px;
 }
+
+
 
 
 .SearchInputDiv {
@@ -111,14 +114,32 @@
   height: 45px;
   outline: none;
   border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+.SearchInputAndButton {
+  display: flex;
+  flex-direction: row;
 }
 
 .searchFeedContainer {
   background-color: #FFFFFF;
-  position: fixed;
-  top: 300px;
+  /* position: fixed; */
+  position:relative;
+  top: 10px;
   overflow: hidden;
-  width: 47%;
+  /* overflow: scroll; */
+  width: 100%;
+}
+
+.searchFeed {
+  min-height: 50px;
+}
+
+.ChannelMessage {
+  height: 600px;
+  overflow: scroll;
 }
 
 .SearchFeedHeader {
@@ -129,5 +150,14 @@
   letter-spacing: -.5px;
   line-height: 35px;
   color: #717274;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.UserSearchFeedHeader {
+  height: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 35px;
+  color: #A9AAAB;
   border-bottom: 1px solid #EBEBEB;
 }

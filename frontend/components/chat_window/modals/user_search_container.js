@@ -11,7 +11,8 @@ const msp = (state) => {
     type: 'User',
     header: 'Direct Messages',
     inputPlaceholder: 'Find or start a conversation',
-    searchFeedHeader: 'Recent conversations'
+    searchFeedHeader: 'Recent conversations',
+    active: state.ui.selected.length > 0
   }
 }
 
