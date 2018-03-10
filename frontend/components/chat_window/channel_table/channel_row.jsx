@@ -30,7 +30,38 @@ class ChannelRow extends React.Component {
     )
   }
 
+  pickNumber() {
+    const a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine '];
+    let num = this.props.channel.member_ids.length;
+    if (num <= 2) {
+      return (
+        `looks_${word}`
+      )
+    } else if (num > 2 && num < 7) {
+      return `looks_${num}`
+    } else {
+      return ``
+    }
+  }
+
   render() {
+    let title;
+    this.props.channel.title.length > 10 ? title = this.props.channel.title.slice(0,13).concat('...') : title = this.props.channel.title
+    let message;
+    if (this.props.channel.is_dm) {
+      message = (
+      <span>
+        <i id="number" className="material-icons">{this.pickNumber()}</i> {title}
+      </span>
+    )
+    } else {
+      message = (
+        <span>
+          {"#".concat('   ').concat(title)}
+        </span>
+      )
+    }
+    debugger
     return (
       <NavLink
         to={`/channels/${this.props.channel.id}`}
@@ -38,7 +69,7 @@ class ChannelRow extends React.Component {
         onMouseEnter={this.hoverTrue}
         onMouseLeave={this.hoverFalse}
         className="ChannelRow">
-        #     {this.props.channel.title}
+        {message}
         <div className={
             this.state.hovered && this.props.channel.title !== 'general' ? 'ChannelRowInnerDiv' : 'hidden'}
             onClick={this.handleClick}>

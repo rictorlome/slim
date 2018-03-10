@@ -95,3 +95,10 @@
 #leaveChannel:hover {
   color: #FFFFFF;
 }
+
+#number {
+  font-size: 18px;
+  position: relative;
+  top: 3px;
+  line-height: 0px;
+}

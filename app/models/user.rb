@@ -21,7 +21,7 @@ class User < ApplicationRecord
     source: :channel
 
   def self.find_by_credentials(username, pw)
-    user = User.find_by(username: username)
+    user = User.find_by(username: username).includes(joined_channels: :members)
     user && user.is_password?(pw) ? user : nil
   end
 
