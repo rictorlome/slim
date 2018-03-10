@@ -15,9 +15,9 @@ export const ChannelFeed = (props) => {
     )
   })
   let message;
-  props.channels.length !== 0 ? message = channels : message = 'No such channel! Hit enter to make it!'
+  props.channels.length !== 0 ? message = channels : message = 'There is no channel by that name. Hit enter to make it!'
   return (
-    <div>
+    <div className="ChannelMessage">
       {message}
     </div>
   )

@@ -26,9 +26,8 @@
 
 .InnerSearchDiv {
   margin: 0 auto;
-  /* background: #FFFFFF; */
-  background: blue;
-  width: 40%;
+  background: #FFFFFF;
+  width: 65%;
   height: 85%;
   display: flex;
   flex-direction: column;
@@ -74,9 +73,12 @@
 }
 
 .SearchHeader {
-  font-size: 40px;
+  font-size: 32px;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: -1px;
   font-weight: bold;
   padding-bottom: 40px;
+  color: #2C2D30;
 }
 
 
@@ -85,8 +87,9 @@
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 100%;
+  width: 99%;
   border-radius: 5px;
+  border: 1px solid #717274;
 }
 
 .magDiv {
@@ -104,21 +107,27 @@
 }
 
 .SearchInput {
-  width: 100%;
+  width: 95%;
   height: 45px;
   outline: none;
   border-radius: 5px;
 }
 
 .searchFeedContainer {
-  background-color: green;
-  margin-top: 40px;
+  background-color: #FFFFFF;
   position: fixed;
+  top: 300px;
   overflow: hidden;
-  width: 30%;
+  width: 47%;
 }
 
 .SearchFeedHeader {
   background-color: #F9F9F9;
   height: 35px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: -.5px;
+  line-height: 35px;
+  color: #717274;
+  border-bottom: 1px solid #EBEBEB;
 }

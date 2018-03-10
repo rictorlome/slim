@@ -10,8 +10,8 @@ import { createChannel } from '../../../actions/channel_actions'
 const msp = (state) => {
   return {
     type: 'Channel',
-    header: 'Browse Channels',
-    inputPlaceholder: 'Search Channels',
+    header: 'Browse channels',
+    inputPlaceholder: 'Search channels',
     searchFeedHeader: 'Channels you can join'
   }
 }

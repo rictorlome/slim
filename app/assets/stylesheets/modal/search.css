@@ -2,6 +2,59 @@
   cursor: pointer;
 }
 
+.SearchedChannelItemContainer {
+  font-family: verdana;
+  font-size: 14px;
+  color: #717274;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.SearchedChannelItemContainer:hover {
+  background-color: #EBF5FC;
+}
+
+.ChannelItemNameAndCount {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 4px;
+}
+
+.ChannelItemName {
+  color: #333437;
+}
+
+.ChannelItemCount {
+  padding-right: 15px;
+}
+
+.ChannelItemDateTime {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+.ChannelMessage {
+  margin-top: 5px;
+  font-family: verdana;
+  font-size: 14px;
+  color: #2C2D30;
+}
+
+#searchedPersonOutline {
+  font-size: 18px;
+  line-height: 15px;
+  padding-left: 3px;
+  padding-right: 1px;
+  position: relative;
+  top: 3px;
+}
+
+
+
+
+
 .UserFeedWrapper {
   height: 500px;
   overflow: scroll;

@@ -3,7 +3,7 @@
   members = channel.members
 
   json.set! channel.id do
-    json.extract! channel, :id, :title
+    json.extract! channel, :id, :title, :created_at
     json.member_ids members.map { |member| member.id}
   end
 end
