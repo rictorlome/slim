@@ -16,6 +16,8 @@ class Channel < ApplicationRecord
     through: :memberships,
     source: :member
 
+  has_many :messages  
+
   after_create :join_created_channel
 
   def join_created_channel

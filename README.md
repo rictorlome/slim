@@ -64,8 +64,8 @@ DONE . Fix styling of logout button.
 DONE . Fix styling of channel table index.
 DONE Fix timing of hover popup.
   -
-2. Fix styling of search modals.
-3. Add info for SearchRowIndex. (Number of Members)
+DONE. Fix styling of search modals.
+DONE. Add info for SearchRowIndex. (Number of Members)
 
 Tomorrow I need to do the following:
 
@@ -74,14 +74,24 @@ DONE 1. Add create new channel and dm.
   - Make user search items clickable.
   - Make user search build up a buffer of users.
 DONE . Add leave channel or dm at click.
-3. Add channel info to upper nav.
+DONE. Add channel info to upper nav.
 DONE 4. Get membership info from backend with channel searches.
 
 5. Set a cap on max people in DM.
-6. Add channel info into upper nav.
-7. Style DM and Channel search.
+DONE. Add channel info into upper nav.
+DONE. Style DM and Channel search.
 8. Add message model.
 9. Add message controller.
 
 TODAY
-1. Style upper nav container.
+DONE. Style upper nav container.
+
+0. Fix N+1 query on sign in.
+0. Cap on DMs.
+0. Add error flashing on forms.
+0. Add DMs/Channels deleting themselves after everyone leaves.
+
+
+Possible Bugs:
+(number of participants not updating in time.)
+(not redirecting to correct channel after creation.)

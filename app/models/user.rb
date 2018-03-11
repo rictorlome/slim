@@ -20,6 +20,9 @@ class User < ApplicationRecord
     through: :channel_participations,
     source: :channel
 
+  has_many :messages,
+    foreign_key: :author_id
+
   def self.find_by_credentials(username, pw)
     user = User.includes(joined_channels: :members).find_by(username: username)
     user && user.is_password?(pw) ? user : nil
