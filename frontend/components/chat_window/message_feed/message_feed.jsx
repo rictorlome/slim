@@ -10,11 +10,9 @@ export class MessageFeed extends React.Component{
   }
 
   render () {
-    debugger
-
     const messages = this.props.messages.map( (message) => {
       return (
-        <div>
+        <div key={message.id}>
           {message.body}
         </div>
       )

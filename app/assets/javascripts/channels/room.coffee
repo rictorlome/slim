@@ -7,6 +7,7 @@ App.room = App.cable.subscriptions.create "RoomChannel",
 
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
+    dispatch(receiveMessage(JSON.parse(data['message'])))
 
-  speak:(message) ->
-    @perform 'speak', message: message
+  speak:(message,channelId, userId) ->
+    @perform 'speak', body: message, channel_id:channelId, author_id: userId
