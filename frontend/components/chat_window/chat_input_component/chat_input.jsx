@@ -12,7 +12,7 @@ export class ChatInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    App.room.speak(this.state.body, this.props.channel, this.props.user)
+    App['room' + this.props.channel].speak(this.state.body, this.props.channel)
     this.setState({body: ''})
   }
 
