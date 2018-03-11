@@ -5,10 +5,13 @@ import { sessionReducer } from './session_reducer';
 import { channelReducer } from './channel_reducer';
 import errorsReducer from './errors_reducer';
 import { uiReducer } from './ui_reducer';
+import { messageReducer } from './message_reducer';
+
 
 const entitiesReducer = combineReducers({
   channels: channelReducer,
-  users: userReducer
+  users: userReducer,
+  messages: messageReducer
 });
 
 

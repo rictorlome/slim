@@ -7,6 +7,7 @@ import { createGuest } from './actions/session_actions';
 
 import * as SearchUtil from './util/search_api_util';
 import { searchChannels } from './actions/search_actions.js'
+import { createMessage, fetchMessages } from './actions/message_actions.js'
 import { joinChannel, leaveChannel, createChannel, createDM } from './actions/channel_actions.js'
 // import { getNamesOfSelectedUsers } from './util/selectors'
 
@@ -28,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //FOR TESTING PURPOSES....
   // window.getState = store.getState;
-  // window.dispatch = store.dispatch;
+  window.dispatch = store.dispatch;
   // window.createGuest = createGuest;
   // window.searchChannels = searchChannels;
   // window.joinChannel = joinChannel;
@@ -36,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // window.createChannel = createChannel;
   // window.createDM = createDM;
   // window.getNamesOfSelectedUsers = getNamesOfSelectedUsers
+  window.createMessage = createMessage
+  window.fetchMessages = fetchMessages
 
 
 

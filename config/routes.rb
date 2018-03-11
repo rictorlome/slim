@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     post 'channels/:channel_id/participations', to: 'channels#join_channel'
     resource :session, only: [:create, :destroy]
   end
+
+  mount ActionCable.server => '/cable'
 end
