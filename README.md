@@ -110,10 +110,12 @@ Possible Bugs: HOW TO TEST?
   - This one is a little weird.
 
 
-0. Subscription to every channel
+DONE. Subscription to every channel
 0. Not subscribing after creation of channel
 0. Using methods defined on window.
 0. Set up redis to work on production deployment.
 
 Style message: (name, picture, time, edit hover)
 0. Add edit feature.
+
+0. Every user in DM should subscribe.

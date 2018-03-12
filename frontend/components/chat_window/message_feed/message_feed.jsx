@@ -9,7 +9,7 @@ export class MessageFeed extends React.Component{
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.channelId !== nextProps.match.params.channelId) {
-      this.props.fetchMessages()
+      nextProps.fetchMessages()
     }
   }
 
@@ -25,7 +25,9 @@ export class MessageFeed extends React.Component{
     });
     return (
       <div className="MessageFeedWrapper">
-        Hello from the message feed
+        <div className="MessageFeedUpperInfo">
+          Hello from the message feed
+        </div>
         {messages}
       </div>
     )

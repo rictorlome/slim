@@ -41,7 +41,22 @@ export class Search extends React.Component{
   }
 
   handleClick(e) {
-    if (this.props.active) {
+    if (!this.props.active) return;
+    // This channel already exists
+    if (this.props.destination !== -1) {
+      debugger
+      
+      if (this.props.isCUAMemberOf(this.props.destination)) {
+        this.props.history.push(`/channels/${this.props.destination.id}`);
+        this.props.close();
+      } else {
+        this.props.join(this.props.destination.id).then( () => {
+          this.props.createSubscription(this.props.destination);
+          this.props.history.push(`/channels/${this.props.destination.id}`)
+        }).then( () => this.props.close());
+      }
+    // This channel does not exist.
+    } else {
       this.props.createDM().then(
         (channel) => {
           this.props.createSubscription(channel.channel);
@@ -50,6 +65,7 @@ export class Search extends React.Component{
       ).then(() => this.props.close())
     }
   }
+
 
   render() {
     return (

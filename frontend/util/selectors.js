@@ -1,3 +1,5 @@
+import isEqual from 'lodash';
+
 export const getCurrentUsersChannels = (state) => {
   if (state.session.currentUser) {
     const user_id = state.session.currentUser;
@@ -81,4 +83,21 @@ export const getNamesOfSelectedUsers = (state) => {
   return state.ui.selected.map( (id) => {
     return state.entities.users[id].username
   }).join(', ')
+}
+
+export const selectedUsersInDm = (state) => {
+  let channels = Object.values(state.entities.channels)
+  for (let i = 0; i < channels.length; i++) {
+    let channel = channels[i]
+    if (!channel.is_dm) continue;
+    if (isEqual(channel.member_ids.slice().sort(), state.ui.selected.concat(state.session.currentUser).sort())) {
+      return channel;
+    }
+  }
+  return -1;
+}
+
+export const isCUAMember = (state, channel) => {
+  debugger
+  return state.entities.channels[channel.id].member_ids.includes(state.session.currentUser);
 }
