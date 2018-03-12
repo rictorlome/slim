@@ -16,6 +16,10 @@ export class ChannelTable extends React.Component {
     this.setState({dropdown: !this.state.dropdown})
   }
 
+  componentDidMount() {
+    this.props.createSubscriptions(this.props.channels)
+  }
+
   render() {
     return (
       <div className="ChannelTableContainer">

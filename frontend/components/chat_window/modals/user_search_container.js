@@ -5,6 +5,7 @@ import { Search } from './search';
 import { closeModal } from '../../../actions/modal_actions';
 import { searchUsers, clearSearch } from '../../../actions/search_actions'
 import { createDM } from '../../../actions/channel_actions'
+import { createSubscription } from '../../../util/websocket_util.js'
 
 const msp = (state) => {
   return {
@@ -21,7 +22,8 @@ const mdp = (dispatch) => {
     clear: () => dispatch(clearSearch()),
     search: (queryVal) => dispatch(searchUsers(queryVal)),
     close: () => dispatch(closeModal()),
-    createDM: () => dispatch(createDM())
+    createDM: () => dispatch(createDM()),
+    createSubscription: (channel) => createSubscription(channel,dispatch)
   }
 }
 

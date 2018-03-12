@@ -27,7 +27,7 @@ export class UpperNav extends React.Component {
           <div className="userCount">
             <i id="starBorder" className="material-icons">star_border</i>
             <i id="personOutline" className="material-icons">person_outline</i>
-            {this.props.channel.member_ids.length}
+            {this.props.count}
           </div>
         </div>
       </div>

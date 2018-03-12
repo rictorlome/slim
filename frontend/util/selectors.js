@@ -27,6 +27,10 @@ export const getCurrentChannel = (state, ownProps) => {
   return state.entities.channels[Number(ownProps.match.params.channelId)]
 }
 
+export const getCurrentChannelsCount = (state, ownProps) => {
+  return getCurrentChannel(state,ownProps).member_ids.length
+}
+
 export const getCurrentChannelsMessages = (state, ownProps) => {
   return Object.values(state.entities.messages).filter( (message ) => {
     return message.channel_id === Number(ownProps.match.params.channelId)

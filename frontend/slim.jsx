@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //FOR TESTING PURPOSES....
   // window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  // window.createGuest = createGuest;
-  // window.searchChannels = searchChannels;
-  // window.joinChannel = joinChannel;
-  // window.leaveChannel = leaveChannel;
-  // window.createChannel = createChannel;
-  // window.createDM = createDM;
-  // window.getNamesOfSelectedUsers = getNamesOfSelectedUsers
-  window.createMessage = createMessage
-  window.fetchMessages = fetchMessages
-  window.receiveMessage = receiveMessage
+  // window.dispatch = store.dispatch;
+  // // window.createGuest = createGuest;
+  // // window.searchChannels = searchChannels;
+  // // window.joinChannel = joinChannel;
+  // // window.leaveChannel = leaveChannel;
+  // // window.createChannel = createChannel;
+  // // window.createDM = createDM;
+  // // window.getNamesOfSelectedUsers = getNamesOfSelectedUsers
+  // window.createMessage = createMessage
+  // window.fetchMessages = fetchMessages
+  // window.receiveMessage = receiveMessage
 
 
 

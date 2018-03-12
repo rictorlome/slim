@@ -6,6 +6,8 @@ import { Search } from './search';
 import { closeModal } from '../../../actions/modal_actions';
 import { searchChannels, clearSearch } from '../../../actions/search_actions'
 import { createChannel } from '../../../actions/channel_actions'
+import { createSubscription } from '../../../util/websocket_util.js'
+import { receiveMessage } from '../../../actions/message_actions';
 
 const msp = (state) => {
   return {
@@ -16,12 +18,13 @@ const msp = (state) => {
   }
 }
 
-const mdp = (dispatch) => {
+const mdp = (dispatch, ownProps) => {
   return {
     clear: () => dispatch(clearSearch()),
     search: (queryVal) => dispatch(searchChannels(queryVal)),
     close: () => dispatch(closeModal()),
-    createChannel: (channel) => dispatch(createChannel(channel))
+    createChannel: (channel) => dispatch(createChannel(channel)),
+    createSubscription: (channel) => createSubscription(channel,dispatch)
   }
 }
 

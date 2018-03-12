@@ -5,7 +5,7 @@ import { ChannelTable } from './channel_table';
 
 import { getCurrentUsersChannels, getCUUsername } from '../../../util/selectors.js';
 import { logout } from '../../../actions/session_actions';
-
+import { createSubscriptions } from '../../../util/websocket_util.js'
 
 const msp = (state, ownProps) => {
   return {
@@ -16,7 +16,8 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
   return {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    createSubscriptions: (channels) => createSubscriptions(channels,dispatch)
   }
 }
 

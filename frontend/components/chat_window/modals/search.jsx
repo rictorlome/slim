@@ -29,6 +29,7 @@ export class Search extends React.Component{
     if (this.state.title && e.key === 'Enter') {
       this.props.createChannel(this.state).then(
         (channel) => {
+          this.props.createSubscription(channel.channel);
           return this.props.history.push(`/channels/${channel.channel.id}`)
         }
       ).then(() => this.props.close())
@@ -43,6 +44,7 @@ export class Search extends React.Component{
     if (this.props.active) {
       this.props.createDM().then(
         (channel) => {
+          this.props.createSubscription(channel.channel);
           this.props.history.push(`/channels/${channel.channel.id}`)
         }
       ).then(() => this.props.close())

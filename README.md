@@ -86,12 +86,34 @@ DONE. Style DM and Channel search.
 TODAY
 DONE. Style upper nav container.
 
+
+
+
+
+
+
+
+
+
+  MONDAY
+
 0. Fix N+1 query on sign in.
 0. Cap on DMs.
 0. Add error flashing on forms.
 0. Add DMs/Channels deleting themselves after everyone leaves.
 
 
-Possible Bugs:
+Possible Bugs: HOW TO TEST?
 (number of participants not updating in time.)
+  - Check how number of participants is rendering. Connect the component.
 (not redirecting to correct channel after creation.)
+  - This one is a little weird.
+
+
+0. Subscription to every channel
+0. Not subscribing after creation of channel
+0. Using methods defined on window.
+0. Set up redis to work on production deployment.
+
+Style message: (name, picture, time, edit hover)
+0. Add edit feature.

@@ -2,11 +2,12 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { UpperNav } from './upper_nav';
-import { getCurrentChannel } from '../../../util/selectors.js'
+import { getCurrentChannel, getCurrentChannelsCount } from '../../../util/selectors.js'
 
 const msp = (state, ownProps) => {
   return {
-    channel: getCurrentChannel(state, ownProps)
+    channel: getCurrentChannel(state, ownProps),
+    count: getCurrentChannelsCount(state, ownProps)
   }
 }
 

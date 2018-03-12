@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
 
   def logout
     current_user.reset_session_token!
+    cookies.signed[:user_id] = nil
     session[:session_token] = nil
   end
 
