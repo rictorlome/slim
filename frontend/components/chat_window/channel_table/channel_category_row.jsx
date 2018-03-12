@@ -21,7 +21,7 @@ export class CategoryRow extends React.Component{
         channel={channel} />)
       })
       return (
-        <div>
+        <div className="ChannelCategoryRow">
           <div title={this.props.buttonTitle}
             className="thumb"
             onClick={this.props.openSearch}>

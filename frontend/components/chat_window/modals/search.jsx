@@ -44,8 +44,7 @@ export class Search extends React.Component{
     if (!this.props.active) return;
     // This channel already exists
     if (this.props.destination !== -1) {
-      debugger
-      
+
       if (this.props.isCUAMemberOf(this.props.destination)) {
         this.props.history.push(`/channels/${this.props.destination.id}`);
         this.props.close();

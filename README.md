@@ -111,9 +111,9 @@ Possible Bugs: HOW TO TEST?
 
 
 DONE. Subscription to every channel
-0. Not subscribing after creation of channel
-0. Using methods defined on window.
-0. Set up redis to work on production deployment.
+DONE. Not subscribing after creation of channel
+DONE. Using methods defined on window.
+DONE. Set up redis to work on production deployment.
 
 Style message: (name, picture, time, edit hover)
 0. Add edit feature.

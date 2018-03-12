@@ -98,6 +98,5 @@ export const selectedUsersInDm = (state) => {
 }
 
 export const isCUAMember = (state, channel) => {
-  debugger
   return state.entities.channels[channel.id].member_ids.includes(state.session.currentUser);
 }

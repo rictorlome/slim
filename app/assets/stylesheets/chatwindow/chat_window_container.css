@@ -5,8 +5,15 @@
 }
 
 .UpperNavAndFeedContainer {
-  width: 100%;
+  width: 88%;
+  height: 100vh;
   display: flex;
+  position: relative;
   flex-direction: column;
   overflow: hidden;
+}
+
+.MessageFeedAndChatInput {
+  width: 100%;
+  height: 100%;
 }

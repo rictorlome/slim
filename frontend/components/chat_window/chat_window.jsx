@@ -14,7 +14,7 @@ export const ChatWindow = (props) => {
       <ChannelTable />
       <div className="UpperNavAndFeedContainer">
         <UpperNav />
-        <div>
+        <div className="MessageFeedAndChatInput">
           <MessageFeed />
           <ChatInput />
         </div>

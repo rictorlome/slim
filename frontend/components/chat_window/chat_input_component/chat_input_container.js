@@ -5,7 +5,7 @@ import { ChatInput } from './chat_input';
 
 const msp = (state, ownProps) => {
   return {
-    channel: Number(ownProps.match.params.channelId),
+    channel: state.entities.channels[ownProps.match.params.channelId],
     user: state.session.currentUser
   }
 }

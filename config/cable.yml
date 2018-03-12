@@ -6,7 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://redistogo:8ded2e27e00dc3e50e40a5cdb3eae4e2@soldierfish.redistogo.com:11922/
+  url: <%=ENV['REDISTOGO_URL']%>
 #   channel_prefix: slim_production
 # production: &production
 #   adapter: redis

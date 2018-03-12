@@ -1,6 +1,8 @@
 .MessageFeedWrapper {
   min-height: 100px;
   font-family: 'Source Sans Pro', sans-serif;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .MessageItemWrapper {
@@ -8,7 +10,7 @@
   padding-right: 15px;
   cursor: default;
   display: flex;
-  flex-direction: row
+  flex-direction: row;
 }
 
 .AuthorName {

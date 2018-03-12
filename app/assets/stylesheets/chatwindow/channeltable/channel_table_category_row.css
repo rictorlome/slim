@@ -55,6 +55,10 @@
   transition: all 500ms ease;
 }
 
+.ChannelCategoryRow {
+  max-height: 400px;
+}
+
 .ChannelRow {
   list-style: none;
   padding-left: 15px;
