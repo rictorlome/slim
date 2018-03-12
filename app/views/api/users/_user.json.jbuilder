@@ -1,4 +1,4 @@
-channels = user.joined_channels
+channels = user.joined_channels.includes(:members)
 
 json.user do
   json.extract! user, :id, :username

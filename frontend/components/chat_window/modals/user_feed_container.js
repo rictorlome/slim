@@ -11,7 +11,8 @@ import { selectUser } from '../../../actions/select_actions';
 
 const msp = (state) => {
   return {
-    users: getUsersInSearchBuffer(state)
+    users: getUsersInSearchBuffer(state),
+    numleft: 8 - state.ui.selected.length
   }
 }
 

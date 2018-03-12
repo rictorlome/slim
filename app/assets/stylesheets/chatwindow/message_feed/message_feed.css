@@ -2,7 +2,8 @@
   min-height: 100px;
   font-family: 'Source Sans Pro', sans-serif;
   overflow-y: scroll;
-  height: 100%;
+  max-height: 860px;
+  height: 90%;
 }
 
 .MessageItemWrapper {

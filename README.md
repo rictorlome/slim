@@ -117,5 +117,4 @@ DONE. Set up redis to work on production deployment.
 
 Style message: (name, picture, time, edit hover)
 0. Add edit feature.
-
 0. Every user in DM should subscribe.

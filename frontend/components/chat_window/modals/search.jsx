@@ -102,7 +102,11 @@ export class Search extends React.Component{
 
             <div className="searchFeedContainer">
               <div className={this.props.type === 'Channel' ? "SearchFeedHeader" : "UserSearchFeedHeader"}>
-                {this.props.searchFeedHeader}
+                {this.props.type === 'User' && this.props.numleft < 8 ?
+                  (<div>
+                  You can add {this.props.numleft} more people.
+                </div>) :
+                (<div>{this.props.searchFeedHeader}</div>)}
               </div>
               <div className="searchFeed">
                 {this.props.type === 'Channel' && this.state.title && <ChannelFeed />}

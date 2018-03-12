@@ -111,4 +111,5 @@
 
 .Disabled {
   background-color: #CDCECE;
+  cursor: default;
 }
