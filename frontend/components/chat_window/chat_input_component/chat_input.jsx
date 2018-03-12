@@ -23,7 +23,7 @@ export class ChatInput extends React.Component {
   render() {
     return (
       <div className='ChatInputWrapper'>
-        <form>
+        <div className="FormWrapper">
           <input value={this.state.body} onChange={this.updateBody} className="TextInput" type='text'>
 
           </input>
@@ -31,8 +31,8 @@ export class ChatInput extends React.Component {
             <div onClick={this.handleSubmit} className="SubmitMessageButton">
               Submit
             </div>
-          </div>
-        </form>
+        </div>
+      </div>
 
       </div>
     )

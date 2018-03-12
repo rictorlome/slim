@@ -19,7 +19,10 @@ const msp = (state) => {
 const mdp = (dispatch, ownProps) => {
   return {
     openSearch: () => dispatch(openModal('ChannelSearch')),
-    leave: (id) => dispatch(leaveChannel(id))
+    leave: (id) => {
+      App['room' + id].unsubscribe();
+      return dispatch(leaveChannel(id));
+    }
   }
 }
 export default withRouter(connect(msp,mdp)(CategoryRow))

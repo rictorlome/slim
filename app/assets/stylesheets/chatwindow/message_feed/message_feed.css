@@ -1,0 +1,31 @@
+.MessageFeedWrapper {
+  min-height: 100px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.MessageItemWrapper {
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: default;
+  display: flex;
+  flex-direction: row
+}
+
+.AuthorName {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+.Time {
+  color: #8D8E8F;
+  font-size: 12px;
+}
+
+#AccountBox {
+  font-size: 28px;
+}
+
+
+.MessageItemWrapper:hover {
+  background-color: #F9F9F9;
+}

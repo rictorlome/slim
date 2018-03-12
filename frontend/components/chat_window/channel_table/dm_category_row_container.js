@@ -19,7 +19,10 @@ const msp = (state) => {
 const mdp = (dispatch) => {
   return {
     openSearch: () => dispatch(openModal('UserSearch')),
-    leave: (id) => dispatch(leaveChannel(id))
+    leave: (id) => {
+      App['room' + id].unsubscribe();
+      return dispatch(leaveChannel(id));
+    }
   }
 }
 

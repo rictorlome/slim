@@ -13,6 +13,10 @@
   width: 30%;
 }
 
+.navTitle {
+  min-width: 200px;
+}
+
 .userCount {
   color: #939495;
   font-size: 13px;

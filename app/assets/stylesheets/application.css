@@ -29,3 +29,8 @@
  .hidden {
    display: none;
  }
+
+ .wholeApp {
+   width: 100vw;
+   overflow: hidden;
+ }

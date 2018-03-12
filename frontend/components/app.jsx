@@ -11,7 +11,7 @@ import {ChatWindow} from './chat_window/chat_window'
 
 
 const App = () => (
-  <div>
+  <div className="wholeApp">
    <Route exact path="/" component={Splash} />
    <AuthRoute path="/login" component={SessionForm} />
    <AuthRoute path="/signup" component={SessionForm} />

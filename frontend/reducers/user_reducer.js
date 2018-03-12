@@ -2,6 +2,7 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions.js';
 import { RECEIVE_USERS } from '../actions/user_actions.js';
 import { ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER,
   RECEIVE_DM, RECEIVE_CHANNEL } from '../actions/channel_actions';
+import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/message_actions.js';
 
 import { merge } from 'lodash';
 
@@ -9,8 +10,10 @@ export const userReducer = (oldState={}, action) => {
   Object.freeze(oldState);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
+    case RECEIVE_MESSAGE:
       return merge({},oldState,{[action.user.id]: action.user});
     case RECEIVE_USERS:
+    case RECEIVE_MESSAGES:
       return merge({},oldState,action.users);
     case ADD_CHANNEL_TO_CURRENT_USER:
       let copy = merge({},oldState)

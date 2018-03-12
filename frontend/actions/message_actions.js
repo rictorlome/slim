@@ -3,17 +3,19 @@ import * as MessageApiUtil from '../util/message_api_util';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 
-export const receiveMessage = (message) => {
+export const receiveMessage = ({message, user}) => {
   return {
     type: RECEIVE_MESSAGE,
-    message
+    message,
+    user
   }
 }
 
-export const receiveMessages = (messages) => {
+export const receiveMessages = ({messages, users}) => {
   return {
     type: RECEIVE_MESSAGES,
-    messages
+    messages,
+    users
   }
 }
 
