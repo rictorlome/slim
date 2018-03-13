@@ -6,7 +6,6 @@ import { SearchedChannelItem } from './searched_channel_item';
 export class ChannelFeed extends React.Component{
   constructor(props) {
     super(props)
-    debugger
     this.handleClick = this.handleClick.bind(this)
   }
   handleClick(channel) {

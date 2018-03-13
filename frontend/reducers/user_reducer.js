@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions.js';
-import { RECEIVE_USERS } from '../actions/user_actions.js';
+import { RECEIVE_USERS, RECEIVE_PARTICIPATION, REMOVE_PARTICIPATION } from '../actions/user_actions.js';
 import { ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER,
   RECEIVE_DM, RECEIVE_CHANNEL } from '../actions/channel_actions';
 import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/message_actions.js';
@@ -11,6 +11,7 @@ export const userReducer = (oldState={}, action) => {
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
     case RECEIVE_MESSAGE:
+    case RECEIVE_PARTICIPATION:
       return merge({},oldState,{[action.user.id]: action.user});
     case RECEIVE_USERS:
     case RECEIVE_MESSAGES:
@@ -21,10 +22,16 @@ export const userReducer = (oldState={}, action) => {
       return copy;
     case REMOVE_CHANNEL_FROM_CURRENT_USER:
       copy = merge({},oldState)
-      const arr = copy[action.participation.member_id].joined_channel_ids
-      const index = arr.indexOf(action.participation.channel_id)
+      let arr = copy[action.participation.member_id].joined_channel_ids
+      let index = arr.indexOf(action.participation.channel_id)
       if (index !== -1) arr.splice(index, 1);
       return copy;
+    // case REMOVE_PARTICIPATION:
+    //   copy = merge({},oldState);
+    //   arr = copy[action.user.id].joined_channel_ids;
+    //   index = arr.indexOf(action.channel.id);
+    //   if (index !== -1) arr.splice(index, 1);
+    //   return copy;
     case RECEIVE_CHANNEL:
       copy = merge({},oldState);
       copy[action.channel.creator_id].joined_channel_ids.push(action.channel.id)

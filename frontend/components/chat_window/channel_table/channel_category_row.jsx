@@ -22,12 +22,14 @@ export class CategoryRow extends React.Component{
       })
       return (
         <div className="ChannelCategoryRow">
+          <div className="thumbWrapper">
           <div title={this.props.buttonTitle}
             className="thumb"
             onClick={this.props.openSearch}>
             {this.props.type}
           </div>
           {channels}
+        </div>
         </div>
       )
   }

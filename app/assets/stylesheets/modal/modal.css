@@ -33,6 +33,14 @@
   flex-direction: column;
 }
 
+@media only screen and (max-width: 1165px) {
+  .InnerSearchDiv {
+    margin: 0 0 0 0;
+    width: 80%;
+    min-width: 0px;
+  }
+}
+
 .SearchDivNav {
   display: flex;
   flex-direction: row;
@@ -82,7 +90,27 @@
   min-width: 255px;
 }
 
+@media only screen and (max-width: 1000px) {
+  .SearchForm {
+    margin-left: 20px;
+    margin-right: 0px;
+    width: 100%;
+  }
+  .UserSearchInput {
+    min-width: 0px;
+    flex-grow: unset;
+  }
 
+  #UserSearchInputDivID {
+    min-width: 0px;
+  }
+  .SearchInputAndButton {
+    min-width: 0px;
+  }
+  .SearchHeader {
+    min-width: 0px;
+  }
+}
 
 
 .SearchInputDiv {

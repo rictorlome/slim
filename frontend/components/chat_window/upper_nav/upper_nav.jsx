@@ -5,6 +5,8 @@ export class UpperNav extends React.Component {
     super(props)
   }
 
+  
+
   renderTitle() {
     let title;
     if (this.props.channel.title.length > 20) {

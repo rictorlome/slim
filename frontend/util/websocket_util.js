@@ -1,4 +1,5 @@
 import { receiveMessage } from '../actions/message_actions';
+import { receiveParticipation, removeParticipation } from '../actions/user_actions';
 
 export const createSubscriptions = (channels, dispatch) => {
   channels.forEach( (channel) => {
@@ -15,7 +16,14 @@ export const createSubscription = (channel, dispatch) => {
 
     },
     received: (data) => {
-      dispatch(receiveMessage(JSON.parse(data['message'])))
+      debugger
+      if (data['message']) {
+        dispatch(receiveMessage(JSON.parse(data['message'])))
+      } else if (data['participation']) {
+        dispatch(receiveParticipation(JSON.parse(data['participation'])))
+      } else if (data['userleave']) {
+        dispatch(removeParticipation(JSON.parse(data['userleave'])))
+      }
     },
     speak: function(message,channelId,userId) {
       return this.perform('speak', {
@@ -23,6 +31,7 @@ export const createSubscription = (channel, dispatch) => {
         channel_id: channelId,
         author_id: userId
       })
-    }
+    },
+
   });
 }

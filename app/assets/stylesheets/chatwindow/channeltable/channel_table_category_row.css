@@ -7,6 +7,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+.thumbWrapper {
+  margin:3px;
+}
 
 .thumb:after {
   content: attr(title);
@@ -14,7 +17,7 @@
   position: absolute;
   left: 35%;
   transform: translateX(-45%);
-  bottom: 35px;
+  bottom: 43px;
   background: #000;
   color: #fff;
   font-size: 12px;
@@ -28,7 +31,7 @@
   position: absolute;
   left: 35%;
   transform: translateX(-250%);
-  top: -1px;
+  top: -8px;
   border-top: 8px solid #000;
   border-bottom: 0;
   border-right: 8px solid transparent;

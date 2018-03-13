@@ -37,9 +37,11 @@ export class Search extends React.Component{
     }
   }
 
+
   componentWillMount() {
     this.props.clear();
   }
+
 
   handleClick(e) {
     if (!this.props.active) return;
@@ -68,7 +70,7 @@ export class Search extends React.Component{
 
   render() {
     return (
-      <div className="OuterSearchDiv" onKeyPress={this.handleEsc}>
+      <div className="OuterSearchDiv">
         <div className="InnerSearchDiv">
           <div className="SearchDivNav">
             <div className="escapeButton">
@@ -83,7 +85,8 @@ export class Search extends React.Component{
 
             </div>
             <div className="SearchInputAndButton">
-              <div className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
+              <div id={this.props.type === 'User' && 'UserSearchInputDivID'}
+                className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
                 {this.props.type === 'Channel' && <div className="magDiv">
                   <i id="searchmag" className="material-icons">search</i>
                 </div>
