@@ -1,7 +1,7 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions.js';
 import { RECEIVE_USERS, RECEIVE_PARTICIPATION, REMOVE_PARTICIPATION } from '../actions/user_actions.js';
 import { ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER,
-  RECEIVE_DM, RECEIVE_CHANNEL } from '../actions/channel_actions';
+  RECEIVE_DM, RECEIVE_OTHER_USERS_DM, RECEIVE_CHANNEL } from '../actions/channel_actions';
 import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/message_actions.js';
 
 import { merge } from 'lodash';
@@ -26,12 +26,6 @@ export const userReducer = (oldState={}, action) => {
       let index = arr.indexOf(action.participation.channel_id)
       if (index !== -1) arr.splice(index, 1);
       return copy;
-    // case REMOVE_PARTICIPATION:
-    //   copy = merge({},oldState);
-    //   arr = copy[action.user.id].joined_channel_ids;
-    //   index = arr.indexOf(action.channel.id);
-    //   if (index !== -1) arr.splice(index, 1);
-    //   return copy;
     case RECEIVE_CHANNEL:
       copy = merge({},oldState);
       copy[action.channel.creator_id].joined_channel_ids.push(action.channel.id)
@@ -42,6 +36,10 @@ export const userReducer = (oldState={}, action) => {
       action.channel.member_ids.forEach( (id) => {
         copy[id].joined_channel_ids.push(action.channel.id)
       });
+      return copy;
+    case RECEIVE_OTHER_USERS_DM:
+      copy = merge({},oldState);
+      copy[action.user.id].joined_channel_ids.push(action.channel.id);
       return copy;
     default:
       return oldState;

@@ -5,19 +5,21 @@ import { ChannelTable } from './channel_table';
 
 import { getCurrentUsersChannels, getCUUsername } from '../../../util/selectors.js';
 import { logout } from '../../../actions/session_actions';
-import { createSubscriptions } from '../../../util/websocket_util.js'
+import { createSubscriptions, createUserSub } from '../../../util/websocket_util.js'
 
 const msp = (state, ownProps) => {
   return {
     channels: getCurrentUsersChannels(state),
-    username: getCUUsername(state)
+    username: getCUUsername(state),
+    cu: state.session.currentUser
   }
 }
 
 const mdp = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    createSubscriptions: (channels) => createSubscriptions(channels,dispatch)
+    createSubscriptions: (channels) => createSubscriptions(channels,dispatch),
+    createUserSub: (cu) => createUserSub(cu, dispatch)
   }
 }
 

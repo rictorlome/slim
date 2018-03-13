@@ -1,5 +1,6 @@
 import { receiveMessage } from '../actions/message_actions';
 import { receiveParticipation, removeParticipation } from '../actions/user_actions';
+import { receiveOtherUsersDM } from '../actions/channel_actions';
 
 export const createSubscriptions = (channels, dispatch) => {
   channels.forEach( (channel) => {
@@ -32,6 +33,20 @@ export const createSubscription = (channel, dispatch) => {
         author_id: userId
       })
     },
+  });
+}
 
+export const createUserSub = (id, dispatch) => {
+  App['user' + id] = App.cable.subscriptions.create({channel:'UserChannel', user: id}, {
+    connected: () => {
+
+    },
+    disconnected: () => {
+
+    },
+    received: (data) => {
+      debugger
+      dispatch(receiveOtherUsersDM(JSON.parse(data['channel'])))
+    },
   });
 }

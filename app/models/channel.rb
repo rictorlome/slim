@@ -16,12 +16,21 @@ class Channel < ApplicationRecord
     through: :memberships,
     source: :member
 
-  has_many :messages  
+  has_many :messages
 
   after_create :join_created_channel
+  after_create_commit :run_broadcast_job, if: :is_dm?
 
   def join_created_channel
     Participation.create!(member_id: self.creator_id, channel_id: self.id)
+  end
+
+  def run_broadcast_job
+    NewDMBroadcastJob.perform_later self
+  end
+
+  def is_dm?
+    self.is_dm
   end
 
 end

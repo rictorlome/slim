@@ -17,6 +17,7 @@ export class ChannelTable extends React.Component {
   }
 
   componentDidMount() {
+    this.props.createUserSub(this.props.cu);
     this.props.createSubscriptions(this.props.channels)
   }
 

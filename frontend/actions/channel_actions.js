@@ -3,6 +3,7 @@ export const ADD_CHANNEL_TO_CURRENT_USER = 'ADD_CHANNEL_TO_CURRENT_USER';
 export const REMOVE_CHANNEL_FROM_CURRENT_USER = 'REMOVE_CHANNEL_FROM_CURRENT_USER';
 export const RECEIVE_CHANNEL = 'RECEIVE_CHANNEL';
 export const RECEIVE_DM = 'RECEIVE_DM';
+export const RECEIVE_OTHER_USERS_DM = 'RECEIVE_OTHER_USERS_DM'
 
 import { getNamesOfSelectedUsers, getCUUsername } from '../util/selectors'
 
@@ -25,6 +26,13 @@ export const receiveChannel = (channel) => {
 export const receiveDM = (channel) => {
   return {
     type: RECEIVE_DM,
+    channel
+  }
+}
+
+export const receiveOtherUsersDM = (channel) => {
+  return {
+    type: RECEIVE_OTHER_USERS_DM,
     channel
   }
 }
