@@ -26,9 +26,13 @@ export class MessageFeed extends React.Component{
   }
 
   render () {
+    let lastAuthor;
+    let first;
     const messages = this.props.messages.map( (message) => {
+      lastAuthor === message.author_id ? first = false : first = true;
+      lastAuthor = message.author_id;
       return (
-        <MessageFeedItem key={message.id} message={message} />
+        <MessageFeedItem first={first} key={message.id} message={message} />
       )
     });
     return (

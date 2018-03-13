@@ -118,3 +118,21 @@ DONE. Set up redis to work on production deployment.
 Style message: (name, picture, time, edit hover)
 0. Add edit feature.
 0. Every user in DM should subscribe.
+
+Added websocket capability to chat. Things to work on moving forward.
+0. Fix leaving DMs.
+1. Add paperclip capability for image hosting.
+DONE. Add emojis to status and to messages.
+3. Add websocket listening for joining of channels
+    - Check to see whether navbar is listening to update props
+4. Double check reducers to make sure they are listening for everything they are supposed to.
+5. Style messages to make them look nicer on the page.
+   - Consider formatting it so that only first message by an author appears
+       with a picture and with the name.
+6. Add header message to channels.
+7. Double check whether any N+1 queries are firing off.
+DONE. Add redirect to channel if you are searching one you are in.
+9. Add escape to exit modals.
+DONE. Add icon on browser tab.
+11. Remove hover effect on channel and dm.
+12. Add scroll to DM and Channel category row.

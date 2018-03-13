@@ -4,6 +4,7 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Playfair+Display" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway|Source+Sans+Pro" rel="stylesheet">
 
+
 <script>
   window.mainsplashpic = "<%= asset_path('home_illo@2x.png') %>"
   window.slacklogo = "<%= asset_path('slack-1.svg') %>"
@@ -19,6 +20,9 @@
   window.eighticon = "<%= asset_path('8icon.svg') %>"
   window.nineicon = "<%= asset_path('9icon.svg') %>"
 </script>
+
+
+
 <script type="text/javascript">
   <% if logged_in? %>
     window.currentUser = <%= render(

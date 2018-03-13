@@ -19,8 +19,9 @@ export class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const data = merge({}, this.state);
-    this.props.processForm(data)
-   this.setState({username: "", password: ""});
+    this.props.processForm(data).then( () => {
+      this.setState({username: "", password: ""});
+    })
   }
 
   handleChange(input) {

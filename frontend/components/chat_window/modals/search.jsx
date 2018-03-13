@@ -1,4 +1,5 @@
 import React from 'react';
+import keydown, { Keys } from 'react-keydown';
 
 import ChannelFeed from './channel_feed_container';
 import UserFeed from './user_feed_container';
@@ -65,10 +66,9 @@ export class Search extends React.Component{
     }
   }
 
-
   render() {
     return (
-      <div className="OuterSearchDiv">
+      <div className="OuterSearchDiv" onKeyPress={this.handleEsc}>
         <div className="InnerSearchDiv">
           <div className="SearchDivNav">
             <div className="escapeButton">

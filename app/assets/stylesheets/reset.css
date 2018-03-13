@@ -48,6 +48,17 @@ table {
 	border-spacing: 0;
 }
 
+textarea {
+    border: none;
+    overflow: auto;
+    outline: none;
+		background-color: transparent;
+    resize: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
 html {
   height: 100%;
 }

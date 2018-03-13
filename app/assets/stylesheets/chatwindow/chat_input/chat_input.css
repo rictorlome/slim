@@ -35,4 +35,18 @@
   padding: 5px;
   height: 35px;
   font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.emojiPickerButton {
+
+}
+
+#AddEmojiFace {
+  line-height: 45px;
+  margin-right: 5px;
+  cursor:pointer;
+}
+#AddEmojiFace:hover {
+  font-size: 32px;
 }
