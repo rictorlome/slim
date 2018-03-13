@@ -31,6 +31,18 @@
   left: 120px;
   border: 1px solid #D9D9D9;
   border-radius: 5px;
+  z-index: 3;
+}
+
+.LogoutButton {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #D9D9D9;
+  left: 10px;
 }
 
 #downarrow {

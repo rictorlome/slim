@@ -9,12 +9,20 @@ export class MessageFeed extends React.Component{
 
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.channelId !== nextProps.match.params.channelId) {
-      nextProps.fetchMessages()
+      nextProps.fetchMessages();
     }
   }
 
+  scrollToBottom() {
+    this.el.scrollIntoView({ behavior: 'smooth' });
+  }
+
   componentDidMount() {
-    this.props.fetchMessages()
+    this.props.fetchMessages();
+    this.scrollToBottom();
+  }
+  componentDidUpdate() {
+    this.scrollToBottom();
   }
 
   render () {
@@ -24,11 +32,12 @@ export class MessageFeed extends React.Component{
       )
     });
     return (
-      <div className="MessageFeedWrapper">
+      <div id="ScrollDiv" className="MessageFeedWrapper">
         <div className="MessageFeedUpperInfo">
           Hello from the message feed
         </div>
         {messages}
+        <div ref={el => { this.el = el; }} />
       </div>
     )
   }

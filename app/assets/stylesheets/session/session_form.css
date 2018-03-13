@@ -101,7 +101,9 @@
 }
 .alternativeLinks {
   padding-top: 5px;
-  padding-bottom: 10px;
+  padding-bottom: 3px;
   margin: 5px auto;
   text-decoration: none;
+  color: #2E309F;
+  border-bottom: 1px solid #2E309F;
 }

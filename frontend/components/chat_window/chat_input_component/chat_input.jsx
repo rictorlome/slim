@@ -46,6 +46,7 @@ export class ChatInput extends React.Component {
           <input onKeyPress={this.pressEnter}
              value={this.state.body}
               onChange={this.updateBody}
+              data-emojiable="true"
               placeholder={this.renderPlaceholder()}
               className="TextInput" type='text'>
           </input>

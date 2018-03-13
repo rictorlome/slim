@@ -26,7 +26,7 @@ export class ChannelTable extends React.Component {
 
         <div className={
           Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}>
-          <button onClick={this.props.logout}>Logout!</button>
+          <div className="LogoutButton" onClick={this.props.logout}>Logout!</div>
         </div>
 
 
