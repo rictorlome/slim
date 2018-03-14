@@ -4,6 +4,6 @@ json.user do
 end
 
 json.channel do
-  json.extract! channel, :id, :title, :creator_id, :is_dm
+  json.extract! channel, :id, :title, :creator_id, :is_dm, :created_at
   json.member_ids channel.member_ids
 end

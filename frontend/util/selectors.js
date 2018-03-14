@@ -43,6 +43,14 @@ export const getCUUsername = (state) => {
   return state.entities.users[state.session.currentUser].username
 }
 
+export const getDMTitleWithoutCU = (state, channelId) => {
+  let title = state.entities.channels[channelId].title;
+  let arr_of_names = title.split(', ');
+  let index = arr_of_names.indexOf(getCUUsername(state));
+  if (index !== -1) arr_of_names.splice(index, 1).join(', ');
+  return arr_of_names;
+}
+
 export const pullRandomChannel = (state) => {
   if (state.session.currentUser) {
     const channelIds = state.entities.users[state.session.currentUser].joined_channel_ids

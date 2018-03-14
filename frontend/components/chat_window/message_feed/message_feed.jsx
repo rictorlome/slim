@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MessageFeedItem from './message_feed_item_container';
+import MessageFeedHeader from './message_feed_header_container';
 
 export class MessageFeed extends React.Component{
   constructor(props) {
@@ -38,7 +39,7 @@ export class MessageFeed extends React.Component{
     return (
       <div id="ScrollDiv" className="MessageFeedWrapper">
         <div className="MessageFeedUpperInfo">
-          Hello from the message feed
+          <MessageFeedHeader />
         </div>
         {messages}
         <div ref={el => { this.el = el; }} />

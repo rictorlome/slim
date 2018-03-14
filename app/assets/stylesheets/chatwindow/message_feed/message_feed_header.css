@@ -1,0 +1,28 @@
+.MessageFeedHeaderWrapper {
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+.MessageFeedHeaderHeader {
+  font-size: 36px;
+  font-weight: bold;
+  padding-bottom: 4px;
+}
+
+.MessageFeedHeaderAuthor {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0077B6;
+  background-color: #EDF9FF;
+  cursor: default;
+}
+
+.MessageFeedHeaderAuthor:hover {
+  color: #005F96;
+  background-color: #DEF0F9;
+}
+
+.MessageFeedBody {
+  font-size: 22px;
+}
