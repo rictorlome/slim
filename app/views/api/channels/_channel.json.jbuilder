@@ -1,5 +1,6 @@
 json.user do
   json.extract! member, :id, :username
+  json.image_url asset_path(member.image.url(:original))
 end
 
 json.channel do

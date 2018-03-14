@@ -8,8 +8,12 @@ export class ChannelTable extends React.Component {
     super(props)
     this.state = {
       dropdown: false,
+      imageUrl: '',
+      imageFile: null,
     }
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.handleFileUpload = this.handleFileUpload.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   toggleDropdown() {
@@ -21,12 +25,45 @@ export class ChannelTable extends React.Component {
     this.props.createSubscriptions(this.props.channels)
   }
 
+  handleFileUpload(e) {
+    const reader = new FileReader();
+    const file = e.currentTarget.files[0];
+    reader.onloadend = () =>
+      this.setState({imageUrl: reader.result, imageFile: file})
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      this.setState({imageUrl: "", imageFile: null})
+    }
+  }
+  handleSubmit() {
+    const file = this.state.imageFile;
+    const formData = new FormData();
+    formData.append("user[username]", this.props.username)
+    if (file) formData.append("user[image]",file)
+    this.props.updateUserImage(formData, this.props.cu)
+  }
+
   render() {
     return (
       <div className="ChannelTableContainer">
 
         <div className={
           Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}>
+          <div className="ImageSubmitWrapper">
+            <div>
+              {Boolean(this.state.imageFile) &&
+                (<img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>)}
+            </div>
+            <input className="fileUploadInput"
+              onChange={this.handleFileUpload}
+               type='file'></input>
+             <div
+               className="imageSubmitDiv"
+               onClick={this.handleSubmit}>
+               Submit!
+             </div>
+          </div>
           <div className="LogoutButton" onClick={this.props.logout}>Logout!</div>
         </div>
 

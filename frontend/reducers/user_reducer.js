@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions.js';
-import { RECEIVE_USERS, RECEIVE_PARTICIPATION, REMOVE_PARTICIPATION } from '../actions/user_actions.js';
+import { RECEIVE_USERS, RECEIVE_PARTICIPATION, REMOVE_PARTICIPATION, RECEIVE_USER } from '../actions/user_actions.js';
 import { ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER,
   RECEIVE_DM, RECEIVE_OTHER_USERS_DM, RECEIVE_CHANNEL } from '../actions/channel_actions';
 import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/message_actions.js';
@@ -12,6 +12,7 @@ export const userReducer = (oldState={}, action) => {
     case RECEIVE_CURRENT_USER:
     case RECEIVE_MESSAGE:
     case RECEIVE_PARTICIPATION:
+    case RECEIVE_USER:
       return merge({},oldState,{[action.user.id]: action.user});
     case RECEIVE_USERS:
     case RECEIVE_MESSAGES:

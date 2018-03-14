@@ -7,6 +7,7 @@
   json.users do
     json.set! message.author_id do
       json.extract! message.author, :id, :username
+      json.image_url asset_path(message.author.image.url(:original))
     end
   end
 end

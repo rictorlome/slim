@@ -26,7 +26,8 @@ export class MessageFeedItem extends React.Component{
         className="MessageItemWrapper">
 
         <div className="MessageItemImage">
-          <i id="AccountBox" className="material-icons">account_box</i>
+          <img height="40px" width="40px"
+            src={this.props.image_url(this.props.message.author_id)}></img>
         </div>
 
         <div className="MessageItemInfoAndBody">

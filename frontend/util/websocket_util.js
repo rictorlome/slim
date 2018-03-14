@@ -49,6 +49,10 @@ export const createUserSub = (id, dispatch) => {
       //   dispatch(receiveOtherUsersDM(JSON.parse(data['channel'])))
       // }
       dispatch(receiveOtherUsersDM(JSON.parse(data['channel'])))
+      let channel = JSON.parse(data['channel']).channel
+      if (!Boolean(App['room' + channel.id])) {
+        createSubscription(channel, dispatch);
+      }
     },
   });
 }
