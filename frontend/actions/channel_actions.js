@@ -30,10 +30,11 @@ export const receiveDM = (channel) => {
   }
 }
 
-export const receiveOtherUsersDM = (channel) => {
+export const receiveOtherUsersDM = ({channel, user}) => {
   return {
     type: RECEIVE_OTHER_USERS_DM,
-    channel
+    channel,
+    user
   }
 }
 

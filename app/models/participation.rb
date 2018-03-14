@@ -10,7 +10,9 @@ class Participation < ApplicationRecord
 
   after_destroy :check_channel_empty
 
-  after_create_commit { ParticipationBroadcastJob.perform_later self }
+  after_create_commit {
+    ParticipationBroadcastJob.perform_later self unless self.channel.is_dm
+  }
   before_destroy { UserleaveBroadcastJob.perform_later self }
 
   def check_channel_empty

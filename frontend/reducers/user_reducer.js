@@ -32,7 +32,7 @@ export const userReducer = (oldState={}, action) => {
       return copy;
     case RECEIVE_DM:
       copy = merge({},oldState);
-      copy[action.channel.creator_id].joined_channel_ids.push(action.channel.id)
+      // copy[action.channel.creator_id].joined_channel_ids.push(action.channel.id)
       action.channel.member_ids.forEach( (id) => {
         copy[id].joined_channel_ids.push(action.channel.id)
       });

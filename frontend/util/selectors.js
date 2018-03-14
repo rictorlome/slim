@@ -90,7 +90,10 @@ export const selectedUsersInDm = (state) => {
   for (let i = 0; i < channels.length; i++) {
     let channel = channels[i]
     if (!channel.is_dm) continue;
-    if (isEqual(channel.member_ids.slice().sort(), state.ui.selected.concat(state.session.currentUser).sort())) {
+    let channel_title_array = channel.title.split(', ').sort();
+    let selected_user_ids_array = state.ui.selected.concat(state.session.currentUser);
+    let selected_user_array = selected_user_ids_array.map( (id) => state.entities.users[id].username ).sort();
+    if (_.isEqual(channel_title_array, selected_user_array)) {
       return channel;
     }
   }

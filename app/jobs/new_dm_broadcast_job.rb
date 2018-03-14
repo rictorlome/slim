@@ -3,8 +3,8 @@ class NewDMBroadcastJob < ApplicationJob
 
   def perform(channel)
     # Do something later
-    debugger
-    channel.members.each do |member|
+    members = channel.members
+    members.each do |member|
       ActionCable.server.broadcast "user_channel_#{member.id}", channel: render_channel(channel, member)
     end
   end

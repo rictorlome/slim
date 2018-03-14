@@ -45,7 +45,9 @@ export const createUserSub = (id, dispatch) => {
 
     },
     received: (data) => {
-      debugger
+      // if (JSON.parse(data['channel']).channel.creator_id !== id) {
+      //   dispatch(receiveOtherUsersDM(JSON.parse(data['channel'])))
+      // }
       dispatch(receiveOtherUsersDM(JSON.parse(data['channel'])))
     },
   });

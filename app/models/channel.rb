@@ -26,7 +26,7 @@ class Channel < ApplicationRecord
   end
 
   def run_broadcast_job
-    NewDMBroadcastJob.perform_later self
+    NewDMBroadcastJob.perform_later(self)
   end
 
   def is_dm?

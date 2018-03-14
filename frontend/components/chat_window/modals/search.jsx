@@ -37,7 +37,6 @@ export class Search extends React.Component{
     }
   }
 
-
   componentWillMount() {
     this.props.clear();
   }
@@ -47,10 +46,11 @@ export class Search extends React.Component{
     if (!this.props.active) return;
     // This channel already exists
     if (this.props.destination !== -1) {
-
+      // If current user is already a member of existing channel
       if (this.props.isCUAMemberOf(this.props.destination)) {
         this.props.history.push(`/channels/${this.props.destination.id}`);
         this.props.close();
+      // If current user left the DM, but still has it in his store.
       } else {
         this.props.join(this.props.destination.id).then( () => {
           this.props.createSubscription(this.props.destination);
@@ -85,7 +85,7 @@ export class Search extends React.Component{
 
             </div>
             <div className="SearchInputAndButton">
-              <div id={this.props.type === 'User' && 'UserSearchInputDivID'}
+              <div id={this.props.type === 'User' ? 'UserSearchInputDivID' : ''}
                 className={this.props.type === 'Channel' ? "SearchInputDiv" : "UserSearchInputDiv"}>
                 {this.props.type === 'Channel' && <div className="magDiv">
                   <i id="searchmag" className="material-icons">search</i>
