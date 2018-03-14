@@ -19,8 +19,12 @@
   max-width: 95%;
 }
 
+.MessageItemInfo {
+  min-width: 185px;
+}
+
 .MessageItemImage {
-  width: 50px;
+  min-width: 50px;
 }
 
 .MessageItemBody {

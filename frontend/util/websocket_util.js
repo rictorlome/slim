@@ -17,7 +17,6 @@ export const createSubscription = (channel, dispatch) => {
 
     },
     received: (data) => {
-      debugger
       if (data['message']) {
         dispatch(receiveMessage(JSON.parse(data['message'])))
       } else if (data['participation']) {
