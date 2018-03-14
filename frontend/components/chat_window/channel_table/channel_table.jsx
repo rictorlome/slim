@@ -42,6 +42,7 @@ export class ChannelTable extends React.Component {
     formData.append("user[username]", this.props.username)
     if (file) formData.append("user[image]",file)
     this.props.updateUserImage(formData, this.props.cu)
+    this.setState({dropdown: false})
   }
 
   render() {
@@ -55,7 +56,12 @@ export class ChannelTable extends React.Component {
               {Boolean(this.state.imageFile) &&
                 (<img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>)}
             </div>
-            <input className="fileUploadInput"
+            <label htmlFor="fileUploadInput" className="fileUploadInputLabel">
+              <span>
+                Choose a photo!
+              </span>
+            </label>
+            <input id="fileUploadInput"
               onChange={this.handleFileUpload}
                type='file'></input>
              <div

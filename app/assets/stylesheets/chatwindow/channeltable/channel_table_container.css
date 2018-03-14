@@ -52,7 +52,7 @@
   justify-content: space-between;
 }
 
-.fileUploadInput {
+.fileUploadInputLabel {
   padding-top: 5px;
   left: 10px;
   margin: 0 auto;
@@ -62,12 +62,17 @@
   width: 90%;
   cursor: pointer;
   border-top: 1px solid #D9D9D9;
+  color: #2E309F;
 }
 
 #iconpreview {
   position: absolute;
   left: 63px;
   top: 3px;
+}
+
+#fileUploadInput {
+  display: none;
 }
 
 .imageSubmitDiv {
