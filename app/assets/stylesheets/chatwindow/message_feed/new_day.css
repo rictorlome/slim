@@ -8,11 +8,12 @@
   overflow:hidden;
   position: -webkit-sticky;
   position: sticky;
-  top: -10px;
+  top: -21px;
 }
 
 .pill {
   position:relative;
+  margin-top: 23px;
   padding-left: 7px;
   padding-right: 7px;
 }
@@ -33,11 +34,12 @@
 
 .dateTab::before,
 .dateTab::after {
- background-color: #E8E8E8;
+ background-color: white;
+ border-bottom: 1px solid #E8E8E8;
  content: "";
- display: inline-block;
- height: 1px;
+ display: block;
+ height: 30px;
  position: relative;
- vertical-align: middle;
+ vertical-align: bottom;
  flex-grow: 1;
 }

@@ -5,7 +5,7 @@ export class UpperNav extends React.Component {
     super(props)
   }
 
-  
+
 
   renderTitle() {
     let title;
@@ -23,6 +23,7 @@ export class UpperNav extends React.Component {
 
   render() {
     return (
+
       <div className="upperNavContainer">
         <div className="upperNavLeftContainer">
           <div className="navTitle">{this.renderTitle()}</div>
@@ -32,6 +33,10 @@ export class UpperNav extends React.Component {
             {this.props.count}
           </div>
         </div>
+        <div className="upperNavMidContainer">
+
+        </div>
+        <div className="upperNavRightContainer"></div>
       </div>
     )
   }

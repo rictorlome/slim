@@ -1,16 +1,28 @@
 .upperNavContainer {
   background-color: white;
-  display: block;
-  width: 100%;
+  display: grid;
+  width: 97.3%;
+  grid-template-columns: repeat(3, 1fr);
   max-height: 70px;
-  padding: 15px;
-  border-bottom: 1px solid #E8E8E8;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
 
+.blocker {
+}
+
 .upperNavLeftContainer {
-  width: 30%;
+  grid-column: 1/2;
+  padding: 15px;
+  background-color: white;
+}
+
+.upperNavMidContainer {
+  grid-column: 2/3;
+  grid-template-rows: repeat(2, 1fr);
+  display: subgrid;
+  background-color: transparent;
+  height: 20px;
 }
 
 .navTitle {
