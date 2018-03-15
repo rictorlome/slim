@@ -111,3 +111,20 @@ export const selectedUsersInDm = (state) => {
 export const isCUAMember = (state, channel) => {
   return state.entities.channels[channel.id].member_ids.includes(state.session.currentUser);
 }
+
+export const getChannelsMessagesDays = (state, channel) => {
+  let days = [];
+  let prevDate;
+  for (let i = 0; i < channel.message_ids.length; i++) {
+    let message = state.entities.messages[channel.message_ids[i]];
+    let d = new Date(message.created_at);
+    let date = d.getDate();
+    if (prevDate === date) {
+      prevDate = date;
+      continue;
+    }
+    days.push(d);
+    prevDate = date;
+  }
+  return days;
+}

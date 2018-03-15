@@ -3,6 +3,7 @@ import React from 'react';
 import MessageFeedItem from './message_feed_item_container';
 import MessageFeedHeader from './message_feed_header_container';
 import { NewDay } from './new_day';
+import DayBox from './day_box_container';
 
 export class MessageFeed extends React.Component{
   constructor(props) {
@@ -46,6 +47,7 @@ export class MessageFeed extends React.Component{
       if (newDay) {
         return (
           <div className="NewDayandMessageItem" key={message.id}>
+            <DayBox />
             <NewDay date={d} />
             <MessageFeedItem first={true} message={message} />
           </div>

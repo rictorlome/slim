@@ -4,18 +4,24 @@
 .newDayDiv {
   display: flex;
   justify-content: center;
-  min-width: 900px;
+  margin-bottom: 10px;
+  overflow:hidden;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .dateTab {
-  width: 100%;
+  min-width:0;
   display: flex;
+  flex-grow: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: #505053;
   font-weight: bold;
-  position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .dateTab::before,
