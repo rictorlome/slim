@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 
 import { Splash } from './splash';
 
-import { pullRandomChannel } from '../../util/selectors.js';
+import { findGeneral } from '../../util/selectors.js';
 
 const msp = (state) => {
   return {
     loggedIn: Boolean(state.session.currentUser),
-    randomChannel: pullRandomChannel(state)
+    randomChannel: findGeneral(state)
   }
 }
 
