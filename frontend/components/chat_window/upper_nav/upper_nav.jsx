@@ -34,7 +34,8 @@ export class UpperNav extends React.Component {
           </div>
         </div>
         <div className="upperNavMidContainer">
-
+          <div className="">
+          </div>
         </div>
         <div className="upperNavRightContainer"></div>
       </div>

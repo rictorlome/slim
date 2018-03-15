@@ -13,9 +13,13 @@
 
 .pill {
   position:relative;
-  margin-top: 23px;
+  margin-top: 20px;
   padding-left: 7px;
   padding-right: 7px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  background-color:white;
+  border-radius: 3px;
 }
 
 .dateTab {
