@@ -2,6 +2,7 @@ import React from 'react';
 
 import MessageFeedItem from './message_feed_item_container';
 import MessageFeedHeader from './message_feed_header_container';
+import { NewDay } from './new_day';
 
 export class MessageFeed extends React.Component{
   constructor(props) {
@@ -29,12 +30,31 @@ export class MessageFeed extends React.Component{
   render () {
     let lastAuthor;
     let first;
+    let prevDate;
+    let newDay;
+    let d;
     const messages = this.props.messages.map( (message) => {
-      lastAuthor === message.author_id ? first = false : first = true;
+
+      d = new Date(message.created_at)
+      newDay = (d.getDate() !== prevDate)
+      prevDate = d.getDate();
+
+
+      first = (lastAuthor !== message.author_id)
       lastAuthor = message.author_id;
-      return (
-        <MessageFeedItem first={first} key={message.id} message={message} />
-      )
+
+      if (newDay) {
+        return (
+          <div className="NewDayandMessageItem" key={message.id}>
+            <NewDay date={d} />
+            <MessageFeedItem first={true} message={message} />
+          </div>
+        )
+      } else {
+        return (
+          <MessageFeedItem first={first} key={message.id} message={message} />
+        )
+      }
     });
     return (
       <div id="ScrollDiv" className="MessageFeedWrapper">

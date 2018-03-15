@@ -54,7 +54,7 @@
 }
 
 .NextMessageTime {
-  width: 50px;
+  min-width: 50px;
   font-size: 12px;
   line-height: 100%;
   padding-top: 5px;

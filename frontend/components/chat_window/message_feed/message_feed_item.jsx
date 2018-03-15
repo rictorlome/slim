@@ -22,8 +22,7 @@ export class MessageFeedItem extends React.Component{
     const d = new Date(this.props.message.created_at);
     let df = dateFormat(d, "hh:MM TT");
     return (
-      <div
-        className="MessageItemWrapper">
+      <div className="MessageItemWrapper">
 
         <div className="MessageItemImage">
           <img height="40px" width="40px"

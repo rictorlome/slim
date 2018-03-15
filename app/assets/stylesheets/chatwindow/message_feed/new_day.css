@@ -1,0 +1,30 @@
+.NewDayandMessageItem {
+}
+
+.newDayDiv {
+  display: flex;
+  justify-content: center;
+  min-width: 900px;
+}
+
+.dateTab {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #505053;
+  font-weight: bold;
+  position: relative;
+}
+
+.dateTab::before,
+.dateTab::after {
+ background-color: #999;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ flex-grow: 1;
+}

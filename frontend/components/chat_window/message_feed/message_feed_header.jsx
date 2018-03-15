@@ -1,5 +1,5 @@
 import React from 'react'
-import dateFormat from 'dateFormat'
+import dateFormat from 'dateformat'
 
 export const MessageFeedHeader = (props) => {
   let message;
