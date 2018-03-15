@@ -6,11 +6,11 @@ export const MessageFeedHeader = (props) => {
   let title;
   const d = new Date(props.created_date);
   let df = dateFormat(d, "mmmm dS");
-  props.is_dm ? title = props.users_minus_you : title = "# ".concat(props.title)
+  props.is_dm ? title = props.users_minus_you.join(', ') : title = "# ".concat(props.title)
 
 
   props.is_dm ? message = `This is the very beginning of
-  your direct message history with ${props.users_minus_you}.` :
+  your direct message history with ${props.users_minus_you.join(', ')}.` :
   message = ` created this channel on ${df}.
   This is the very beginning of the ${props.title} channel.
   Purpose: This channel is for chatting and sending emojis.`

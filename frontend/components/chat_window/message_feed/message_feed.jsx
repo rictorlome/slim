@@ -3,7 +3,7 @@ import React from 'react';
 import MessageFeedItem from './message_feed_item_container';
 import MessageFeedHeader from './message_feed_header_container';
 import { NewDay } from './new_day';
-import DayBox from './day_box_container';
+import { DayBox } from './day_box';
 
 export class MessageFeed extends React.Component{
   constructor(props) {
@@ -29,41 +29,19 @@ export class MessageFeed extends React.Component{
   }
 
   render () {
-    let lastAuthor;
-    let first;
-    let prevDate;
-    let newDay;
-    let d;
-    const messages = this.props.messages.map( (message) => {
-
-      d = new Date(message.created_at)
-      newDay = (d.getDate() !== prevDate)
-      prevDate = d.getDate();
-
-
-      first = (lastAuthor !== message.author_id)
-      lastAuthor = message.author_id;
-
-      if (newDay) {
-        return (
-          <div className="NewDayandMessageItem" key={message.id}>
-            <DayBox />
-            <NewDay date={d} />
-            <MessageFeedItem first={true} message={message} />
-          </div>
-        )
-      } else {
-        return (
-          <MessageFeedItem first={first} key={message.id} message={message} />
-        )
-      }
-    });
+    let messages;
+    const dayBoxes = this.props.days.map( (day) => {
+      messages = this.props.getDaysMessages(this.props.messages, day)
+      return (
+        <DayBox key={day.getTime()} date={day} messages={messages}/>
+      )
+    })
     return (
       <div id="ScrollDiv" className="MessageFeedWrapper">
         <div className="MessageFeedUpperInfo">
           <MessageFeedHeader />
         </div>
-        {messages}
+        {dayBoxes}
         <div ref={el => { this.el = el; }} />
       </div>
     )

@@ -1,4 +1,5 @@
 import isEqual from 'lodash';
+import isEmpty from 'lodash';
 
 export const getCurrentUsersChannels = (state) => {
   if (state.session.currentUser) {
@@ -27,6 +28,14 @@ export const getCUsDMs = (state) => {
 
 export const getCurrentChannel = (state, ownProps) => {
   return state.entities.channels[Number(ownProps.match.params.channelId)]
+}
+
+export const getCurrentChannelsAuthor = (state, ownProps) => {
+  let author;
+  let author_id = getCurrentChannel(state,ownProps).creator_id;
+  state.entities.users[author_id] === undefined ? author = 'admin' :
+    author = state.entities.users[author_id].username;
+  return author;
 }
 
 export const getCurrentChannelsCount = (state, ownProps) => {
@@ -113,6 +122,7 @@ export const isCUAMember = (state, channel) => {
 }
 
 export const getChannelsMessagesDays = (state, channel) => {
+  if (_.isEmpty(state.entities.messages) || _.isEmpty(channel.message_ids)) return [];
   let days = [];
   let prevDate;
   for (let i = 0; i < channel.message_ids.length; i++) {
@@ -127,4 +137,14 @@ export const getChannelsMessagesDays = (state, channel) => {
     prevDate = date;
   }
   return days;
+}
+
+export const getAllDaysMessages = (messages, date) => {
+  return messages.filter( (message) => {
+    let firstD = new Date(date.getTime());
+    let otherD = new Date(message.created_at);
+    firstD.setHours(0,0,0,0);
+    otherD.setHours(0,0,0,0);
+    return firstD.getTime() === otherD.getTime();
+  })
 }

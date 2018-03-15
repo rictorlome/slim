@@ -41,7 +41,7 @@ export class ChatInput extends React.Component {
   renderPlaceholder() {
     let m;
     this.props.channel.is_dm ?
-     m = 'Message '.concat(this.props.channel.title) :
+     m = 'Message '.concat(this.props.dmTitle) :
       m = 'Message  #'.concat(this.props.channel.title);
     return m;
   }

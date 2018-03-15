@@ -3,12 +3,16 @@ import { withRouter } from 'react-router-dom';
 
 import { MessageFeed } from './message_feed';
 
-import { getCurrentChannelsMessages } from '../../../util/selectors'
+import { getCurrentChannelsMessages, getChannelsMessagesDays, getAllDaysMessages } from '../../../util/selectors'
 import { fetchMessages } from '../../../actions/message_actions'
 
 const msp = (state, ownProps) => {
+  let channel = state.entities.channels[parseInt(ownProps.match.params.channelId)]
+  let d = getChannelsMessagesDays(state,channel);
   return {
-    messages: getCurrentChannelsMessages(state, ownProps)
+    messages: getCurrentChannelsMessages(state, ownProps),
+    days: getChannelsMessagesDays(state,channel),
+    getDaysMessages: (messages, date) => getAllDaysMessages(messages,date)
   }
 }
 

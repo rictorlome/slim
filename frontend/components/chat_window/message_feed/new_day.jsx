@@ -6,7 +6,9 @@ export const NewDay = (props) => {
   return (
     <div className="newDayDiv">
       <div className="dateTab">
-        {"    ".concat(df).concat("   ")}
+        <div className="pill">
+          {"    ".concat(df).concat("   ")}
+        </div>
       </div>
     </div>
   )

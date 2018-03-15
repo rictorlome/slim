@@ -2,7 +2,7 @@ import { RECEIVE_CURRENT_USER } from '../actions/session_actions.js';
 import { RECEIVE_CHANNELS, RECEIVE_CHANNEL, RECEIVE_OTHER_USERS_DM,
   RECEIVE_DM, ADD_CHANNEL_TO_CURRENT_USER, REMOVE_CHANNEL_FROM_CURRENT_USER } from '../actions/channel_actions.js'
 import { RECEIVE_PARTICIPATION, REMOVE_PARTICIPATION } from '../actions/user_actions.js'
-import { RECEIVE_MESSAGES } from '../actions/message_actions';
+import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/message_actions';
 import { merge } from 'lodash';
 
 export const channelReducer = (oldState={}, action) => {
@@ -41,6 +41,11 @@ export const channelReducer = (oldState={}, action) => {
       channel_id = Object.values(action.messages)[0].channel_id;
       channel = copy[channel_id]
       channel.message_ids = Object.keys(action.messages).map( (id) => parseInt(id));
+      return copy;
+    case RECEIVE_MESSAGE:
+      copy = merge({},oldState);
+      channel = copy[action.message.channel_id];
+      channel.message_ids === undefined ? channel.message_ids = [action.message.id] : channel.message_ids.push(action.message.id)
       return copy;
     case RECEIVE_PARTICIPATION:
       copy = merge({}, oldState);

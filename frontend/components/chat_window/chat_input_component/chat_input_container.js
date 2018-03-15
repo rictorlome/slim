@@ -2,12 +2,14 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { ChatInput } from './chat_input';
-
+import { getDMTitleWithoutCU } from '../../../util/selectors'
 
 const msp = (state, ownProps) => {
+  let channel = state.entities.channels[ownProps.match.params.channelId]
   return {
-    channel: state.entities.channels[ownProps.match.params.channelId],
-    user: state.session.currentUser
+    channel: channel,
+    user: state.session.currentUser,
+    dmTitle: getDMTitleWithoutCU(state, channel.id)
   }
 }
 const mdp = (dispatch) => {
