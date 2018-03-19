@@ -21,11 +21,12 @@
 
 .OuterSearchDiv {
   display: table-cell;
-  vertical-align: middle;
+  vertical-align: super;
 }
 
 .InnerSearchDiv {
   margin: 0 auto;
+  margin-top: 7%;
   background: #FFFFFF;
   width: 65%;
   height: 85%;
@@ -99,6 +100,7 @@
   .UserSearchInput {
     min-width: 0px;
     flex-grow: unset;
+    margin-bottom: 2px;
   }
 
   #UserSearchInputDivID {
@@ -149,6 +151,7 @@
 .SearchInputAndButton {
   display: flex;
   flex-direction: row;
+  margin-bottom: 3px;
 }
 
 .searchFeedContainer {
