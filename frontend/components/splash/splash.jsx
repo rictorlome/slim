@@ -21,7 +21,7 @@ export class Splash extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="splashContainer">
         {
           this.state.redirect && <Redirect to={{
             pathname: '/signup',
@@ -48,13 +48,15 @@ export class Splash extends React.Component {
             making channels, making direct messages, sending messages,
             searching users, searching channels, and that's about it!
           </div>
-          <span>
+          <div className="SplashInputAndButton">
             <input placeholder="Username" value={this.state.username} onChange={this.updateUsername} />
             <button
               className="getStartedButton"
               onClick={this.updateRedirect}>Get started!</button>
-          </span>
-          <div>Already using Slim? <Link to={'/login'}>Sign in.</Link></div>
+          </div>
+          <div className="AlreadyUsingDiv">
+            Already using Slim? <Link to={'/login'}>Sign in.</Link>
+          </div>
         </div>
         </div>
       </div>

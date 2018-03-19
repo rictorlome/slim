@@ -7,6 +7,7 @@
   vertical-align: middle;
   line-height: 80px;
   border-bottom: 1px solid #EBEBEB;
+  margin-bottom: 5%;
 }
 
 .leftSplashNav {
@@ -18,7 +19,7 @@
 }
 
 .midSplashNav{
-  flex-grow: 3;
+  flex-grow: 23;
 }
 
 
@@ -39,6 +40,7 @@
 .rightSplashNav {
   flex-grow: 1;
   justify-content: space-between;
+  margin-right: 25px;
 }
 
 .rightSplashNavInnerDiv {
@@ -46,7 +48,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 200px;
   height: 50px;
 }
 
