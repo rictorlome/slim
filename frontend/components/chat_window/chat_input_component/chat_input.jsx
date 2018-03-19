@@ -1,6 +1,7 @@
 import React from 'react';
 // import 'emoji-mart/css/emoji-mart.css';
 import { Picker } from 'emoji-mart';
+import TextareaAutosize from 'react-autosize-textarea';
 
 export class ChatInput extends React.Component {
   constructor(props) {
@@ -69,19 +70,20 @@ export class ChatInput extends React.Component {
           <div className="PlusButton">
             <i id="AddButton" className="material-icons">add</i>
           </div>
-          <textarea onKeyPress={this.pressEnter}
-             value={this.state.body}
+          <TextareaAutosize onKeyPress={this.pressEnter}
+              maxRows={12}
+              value={this.state.body}
               onChange={this.updateBody}
               maxLength="1000"
               placeholder={this.renderPlaceholder()}
               className="TextInput" type='text'>
-          </textarea>
+          </TextareaAutosize>
           <div className="emojiPickerButton">
             <i id="AddEmojiFace" onClick={() => this.toggleSearch()}
               className="material-icons">tag_faces</i>
           </div>
         </div>
-        <div>
+        <div className="CharsLeftDiv">
           {this.renderCharsLeft()}
         </div>
       </div>

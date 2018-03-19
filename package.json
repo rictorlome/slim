@@ -9,6 +9,7 @@
     "dateformat": "^3.0.3",
     "emoji-mart": "^2.5.0",
     "react": "^16.2.0",
+    "react-autosize-textarea": "^3.0.2",
     "react-dom": "^16.2.0",
     "react-keydown": "^1.9.7",
     "react-modal": "^3.3.1",

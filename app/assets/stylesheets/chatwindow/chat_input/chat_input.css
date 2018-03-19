@@ -2,9 +2,8 @@
   width: 100%;
   overflow: hidden;
   background-color: white;
-  position: absolute;
-  bottom: 0;
   padding: 15px;
+  padding-top: .5px;
 }
 
 .ChatInputInnerDiv {
@@ -18,10 +17,11 @@
 
 .PlusButton {
   border-right: 2px solid #717274;
-  vertical-align: center;
+  display:flex;
 }
 
 #AddButton {
+  align-self: flex-end;
   line-height: 45px;
   color: #8D8E8F;
   margin-left: 3px;
@@ -29,6 +29,7 @@
 }
 
 .TextInput {
+  min-width: 400px;
   margin-left: 3px;
   background-color: white;
   width: 100%;
@@ -37,12 +38,27 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
+.TextInput::-webkit-input-placeholder {
+  padding-top: 7px;
+}
+.TextInput:-moz-placeholder {
+    /* Firefox 18- */
+  padding-top: 7px;
+}
+.TextInput::-moz-placeholder {
+    /* Firefox 19+ */
+  padding-top: 7px;
+}
+.TextInput:-ms-input-placeholder {
+  padding-top: 7px;
+}
 
 .emojiPickerButton {
-
+  display: flex;
 }
 
 #AddEmojiFace {
+  align-self: flex-end;
   line-height: 45px;
   margin-right: 5px;
   cursor:pointer;
