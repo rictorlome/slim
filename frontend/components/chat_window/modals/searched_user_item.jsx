@@ -8,7 +8,8 @@ export const SearchedUserItem = (props) => {
           props.select(props.user.id)
         }
       }}>
-      Hi, my name is {props.user.username}
+      <img className="SearchedUserImage" src={props.user.image_url}></img>
+      {props.user.username}
     </div>
   )
 }

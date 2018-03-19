@@ -15,7 +15,7 @@ const msp = (state) => {
     header: 'Direct Messages',
     inputPlaceholder: 'Find or start a conversation',
     searchFeedHeader: 'Recent conversations',
-    active: state.ui.selected.length > 0 && state.ui.selected.length < 8,
+    active: state.ui.selected.length > 0 && state.ui.selected.length <= 8,
     numleft: 8 - state.ui.selected.length,
     destination: selectedUsersInDm(state),
     isCUAMemberOf: (channel) => isCUAMember(state,channel)

@@ -23,6 +23,11 @@ export class ChannelFeed extends React.Component{
     }
   }
   render() {
+    const newChannelMessage = (
+      <div className="newChannelDiv">
+        There is no channel by that name. Press <span id="ENTERspan">ENTER</span> to make it.
+      </div>
+    )
     const channels = this.props.channels.map( (channel) => {
       return (
         <div className="SearchedChannelItemWrapper" key={channel.id} onClick={() => this.handleClick(channel)}>
@@ -31,7 +36,7 @@ export class ChannelFeed extends React.Component{
       )
     })
     let message;
-    this.props.channels.length !== 0 ? message = channels : message = 'There is no channel by that name. Hit enter to make it!'
+    this.props.channels.length !== 0 ? message = channels : message = newChannelMessage
     return (
       <div className="ChannelMessage">
         {message}

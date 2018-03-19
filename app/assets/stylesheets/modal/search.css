@@ -65,10 +65,18 @@
   font-size: 14px;
   cursor:pointer;
   border-radius: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .SearchedUserItemDiv:hover {
   background-color: #EBF5FC;
+}
+
+.SearchedUserImage {
+  height: 40px;
+  width: 40px;
+  margin-right: 13px; 
 }
 
 .UserSearchInput {
