@@ -38,20 +38,6 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
-.TextInput::-webkit-input-placeholder {
-  padding-top: 7px;
-}
-.TextInput:-moz-placeholder {
-    /* Firefox 18- */
-  padding-top: 7px;
-}
-.TextInput::-moz-placeholder {
-    /* Firefox 19+ */
-  padding-top: 7px;
-}
-.TextInput:-ms-input-placeholder {
-  padding-top: 7px;
-}
 
 .emojiPickerButton {
   display: flex;

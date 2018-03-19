@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-# README
-  
->>>>>>> e8958ea2ad59f9954f5a9d2ab8c3d037a34c6112
 # Slim
 
 ## Slim is a live chat app with avatar and emoji support.
@@ -20,11 +15,7 @@ ___
 Below is a 20 second screencast of the app in action:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=f_ad907-zQ0
-<<<<<<< HEAD
 " target="_blank"><img src="http://img.youtube.com/vi/f_ad907-zQ0/0.jpg"
-=======
-" target="_blank"><img src="http://img.youtube.com/vi/f_ad907-zQ0/0.jpg" 
->>>>>>> e8958ea2ad59f9954f5a9d2ab8c3d037a34c6112
 alt="Slim Screencast" width="240" height="180" border="10" /></a>
 
 ### [DEMO LINK](https://slack-imitation.herokuapp.com)
@@ -41,9 +32,3 @@ The primary purpose of this application was to create a fully functional chat ap
 
 The guiding philosophies behind the front-end design were normalization of state and segregation of component responsibilities into a strict component hierarchy. For example, the render logic for all the messages in a channel goes:
 MessageFeed renders DayBoxes => DayBoxes render MessageFeedItems => MessageFeedItems render a few nested divs.
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> e8958ea2ad59f9954f5a9d2ab8c3d037a34c6112
