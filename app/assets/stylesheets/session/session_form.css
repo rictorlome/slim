@@ -9,6 +9,7 @@
 
 .sessionErrors {
   background-color: #FFFFFF;
+  font-family: 'Raleway', sans-serif;
   margin: 0 auto;
   width: 50%;
   max-width: 470px;
@@ -16,7 +17,7 @@
   box-shadow: 0.25px 0.25px;
   /* border-left: 5px solid #D92540; */
   height: auto;
-  font: 16px;
+  font: 14px;
   vertical-align: center;
   line-height: 100%;
   border-radius: 5px;
@@ -39,7 +40,7 @@
   padding-left: 5px;
   padding-right: 5px;
   color: red;
-  padding-top: 3.5px;
+  padding-top: 7.5px;
 }
 
 .sessionForm {

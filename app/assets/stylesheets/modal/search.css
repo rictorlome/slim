@@ -1,6 +1,9 @@
 .SearchedChannelItemWrapper:hover {
   cursor: pointer;
 }
+#ENTERspan {
+  color: blue;
+}
 
 .SearchedChannelItemContainer {
   font-family: verdana;

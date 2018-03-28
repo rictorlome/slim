@@ -68,7 +68,9 @@
 #iconpreview {
   position: absolute;
   left: 63px;
-  top: 3px;
+  top: 4px;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 #fileUploadInput {
@@ -84,6 +86,7 @@
   bottom: 25px;
   width: 90%;
   cursor: pointer;
+  color: black;
   border-top: 1px solid #D9D9D9;
 }
 

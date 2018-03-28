@@ -55,13 +55,16 @@
 }
 
 .guestLoginButton {
-  margin-top: 5px;
-  border: 1px solid black;
-  border-radius: 10px;
-  color: #a8aaad;
-  line-height: 50px;
-  width: 115px;
   font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  width: 150px;
+  margin-top:8px;
+  line-height: 41px;
+  background-color: #4049AA;
+  border-radius: 7px;
+  color: white;
+  padding: 0% 10%;
+  cursor: pointer;
 }
 
 #logout {

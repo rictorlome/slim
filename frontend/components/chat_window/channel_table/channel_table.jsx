@@ -8,7 +8,7 @@ export class ChannelTable extends React.Component {
     super(props)
     this.state = {
       dropdown: false,
-      imageUrl: '',
+      imageUrl: window.landscape,
       imageFile: null,
     }
     this.toggleDropdown = this.toggleDropdown.bind(this);
@@ -33,7 +33,7 @@ export class ChannelTable extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     } else {
-      this.setState({imageUrl: "", imageFile: null})
+      this.setState({imageUrl: window.landscape, imageFile: null})
     }
   }
   handleSubmit() {
@@ -53,8 +53,7 @@ export class ChannelTable extends React.Component {
           Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}>
           <div className="ImageSubmitWrapper">
             <div>
-              {Boolean(this.state.imageFile) &&
-                (<img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>)}
+                <img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>)
             </div>
             <label htmlFor="fileUploadInput" className="fileUploadInputLabel">
               <span>
