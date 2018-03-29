@@ -8,6 +8,9 @@ import { DayBox } from './day_box';
 export class MessageFeed extends React.Component{
   constructor(props) {
     super(props)
+    this.state = {
+      mCount: 0
+    }
   }
 
   componentWillReceiveProps(nextProps) {
@@ -16,16 +19,23 @@ export class MessageFeed extends React.Component{
     }
   }
 
-  scrollToBottom() {
+  scrollToBottomSmooth() {
     this.el.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  scrollToBottomFast() {
+    this.el.scrollIntoView({ behavior: 'instant' });
   }
 
   componentDidMount() {
     this.props.fetchMessages();
-    this.scrollToBottom();
   }
-  componentDidUpdate() {
-    this.scrollToBottom();
+  componentDidUpdate(prevProps,prevState) {
+    if (Object.keys(this.props.messages).length - Object.keys(prevProps.messages).length == 1) {
+      this.scrollToBottomSmooth();
+    } else {
+      this.scrollToBottomFast();
+    }
   }
 
   render () {
