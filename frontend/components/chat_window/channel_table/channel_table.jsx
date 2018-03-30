@@ -19,6 +19,11 @@ export class ChannelTable extends React.Component {
   toggleDropdown() {
     this.setState({dropdown: !this.state.dropdown})
   }
+  componentWillReceiveProps(nextProps) {
+    if (Boolean(this.state.dropdown) && nextProps.dropdown !== this.props.dropdown) {
+      this.setState({dropdown: false})
+    }
+  }
 
   componentDidMount() {
     this.props.createUserSub(this.props.cu);
@@ -49,11 +54,13 @@ export class ChannelTable extends React.Component {
     return (
       <div className="ChannelTableContainer">
 
-        <div className={
-          Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}>
+        <div
+          id="dropdown"
+          className={Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}
+          >
           <div className="ImageSubmitWrapper">
             <div>
-                <img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>)
+                <img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>
             </div>
             <label htmlFor="fileUploadInput" className="fileUploadInputLabel">
               <span>

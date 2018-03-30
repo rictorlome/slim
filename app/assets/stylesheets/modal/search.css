@@ -43,6 +43,7 @@
   font-family: verdana;
   font-size: 14px;
   color: #2C2D30;
+  max-height: 450px;
 }
 
 #searchedPersonOutline {
@@ -55,7 +56,7 @@
 }
 
 .UserFeedWrapper {
-  height: 600px;
+  max-height: 450px;
   overflow: scroll;
 }
 

@@ -22,6 +22,11 @@ export class ChatInput extends React.Component {
     this.setState({body: '', emojiSearch: false})
     // this.determinePickerStyle();
   }
+  componentWillReceiveProps(nextProps) {
+    if (Boolean(this.state.emojiSearch) && nextProps.mart !== this.props.mart) {
+      this.setState({emojiSearch: false})
+    }
+  }
 
   updateBody(e) {
     this.setState({body: e.target.value})
@@ -88,6 +93,7 @@ export class ChatInput extends React.Component {
         </div>
       </div>
       <Picker
+        id="emoji-picker"
         className={this.state.emojiSearch ? 'emoji-mart' : 'hidden'}
         set='emojione'
         showPreview={false}

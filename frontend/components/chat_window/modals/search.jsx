@@ -27,6 +27,7 @@ export class Search extends React.Component{
   }
 
   handleEnter(e) {
+    if (this.props.type == 'User') return;
     if (this.state.title && e.key === 'Enter') {
       this.props.createChannel(this.state).then(
         (channel) => {
