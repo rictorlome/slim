@@ -32,7 +32,7 @@ export class Search extends React.Component{
       this.props.createChannel(this.state).then(
         (channel) => {
           this.props.createSubscription(channel.channel);
-          return this.props.history.push(`/channels/${channel.channel.id}`)
+          this.props.history.push(`/channels/${channel.channel.id}`)
         }
       ).then(() => this.props.close())
     }

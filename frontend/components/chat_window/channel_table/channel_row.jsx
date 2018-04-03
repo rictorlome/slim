@@ -59,7 +59,7 @@ class ChannelRow extends React.Component {
       <NavLink
         to={`/channels/${this.props.channel.id}`}
         activeClassName="selected"
-        onMouseEnter={this.hoverTrue}
+        onMouseOver={this.hoverTrue}
         onMouseLeave={this.hoverFalse}
         className="ChannelRow">
         {message}
