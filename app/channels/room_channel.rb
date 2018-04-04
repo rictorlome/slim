@@ -9,7 +9,7 @@ class RoomChannel < ApplicationCable::Channel
 
   def speak(data)
     m = Message.new
-    m.body, m.author_id, m.channel_id = data['body'], self.connection.current_user.id, params['room']
+    m.body, m.author_id, m.channel_id = data['body'], data['author_id'], params['room']
     m.save!
   end
 end

@@ -18,7 +18,7 @@ export class ChatInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    App['room' + this.props.channel.id].speak(this.state.body, this.props.channel.id)
+    App['room' + this.props.channel.id].speak(this.state.body, this.props.channel.id, this.props.user)
     this.setState({body: '', emojiSearch: false})
     // this.determinePickerStyle();
   }
