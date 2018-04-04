@@ -76,6 +76,7 @@ export class ChatInput extends React.Component {
             <i id="AddButton" className="material-icons">add</i>
           </div>
           <TextareaAutosize onKeyPress={this.pressEnter}
+              autoFocus
               maxRows={12}
               value={this.state.body}
               onChange={this.updateBody}

@@ -29,6 +29,7 @@ export class Search extends React.Component{
   handleEnter(e) {
     if (this.props.type == 'User') return;
     if (this.state.title && e.key === 'Enter') {
+      e.preventDefault();
       this.props.createChannel(this.state).then(
         (channel) => {
           this.props.createSubscription(channel.channel);
@@ -94,6 +95,7 @@ export class Search extends React.Component{
                 }
                 {this.props.type === 'User' && <SearchBuffer />}
                 <input className={this.props.type === 'Channel' ? "SearchInput" : "UserSearchInput"}
+                  autoFocus
                   placeholder={this.props.inputPlaceholder}
                   value={this.state.title}
                   onChange={this.updateTitle}></input>

@@ -62,6 +62,7 @@ export class SessionForm extends React.Component {
             </div>
 
             <input className="sessionFormInput"
+              autoFocus
               onChange={this.handleChange('username')}
               type="text"
               value={this.state.username}
