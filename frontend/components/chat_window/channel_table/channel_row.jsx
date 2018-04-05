@@ -25,7 +25,7 @@ class ChannelRow extends React.Component {
     const dest = `/channels/${this.props.general}`
     this.props.leave(this.props.channel.id).then(
       () => {
-        return this.props.history.push(dest)
+        this.props.history.push(dest)
       }
     )
   }

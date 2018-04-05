@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create, :index, :update]
     resources :channels, only: [:index, :create] do
-      resources :messages, only: [:index, :create]
+      resources :messages, only: [:index]
     end
     delete 'channels/:channel_id/participations', to: 'channels#leave_channel'
     post 'channels/:channel_id/participations', to: 'channels#join_channel'

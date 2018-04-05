@@ -8,12 +8,11 @@ import { openModal } from '../../../actions/modal_actions.js';
 import { leaveChannel } from '../../../actions/channel_actions';
 
 const msp = (state) => {
-  const x = {
+  return {
     channels: getCUsPubChannels(state),
     buttonTitle: 'Browse all channels',
     general: findGeneral(state)
   }
-  return x;
 };
 
 const mdp = (dispatch, ownProps) => {

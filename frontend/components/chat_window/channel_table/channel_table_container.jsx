@@ -18,7 +18,9 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => {
   return {
-    logout: () => dispatch(logout()),
+    logout: () => {
+      dispatch(logout()).then(() => App.cable.disconnect())
+    },
     createSubscriptions: (channels) => createSubscriptions(channels,dispatch),
     createUserSub: (cu) => createUserSub(cu, dispatch),
     updateUserImage: (formData,cu) => dispatch(updateUserImage(formData,cu))

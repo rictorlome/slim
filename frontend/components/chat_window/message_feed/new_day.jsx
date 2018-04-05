@@ -6,11 +6,13 @@ export const NewDay = (props) => {
   const d1 = new Date(props.date);
   const d2 = new Date();
 
-  const timeDiff = d2.getTime() - d1.getTime();
-  const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+  const d1Days = Math.ceil(d1.getTime() / (1000 * 3600 * 24))
+  const d2Days = Math.ceil(d2.getTime() / (1000 * 3600 * 24))
 
-  if (diffDays === 1) df = 'Today';
-  if (diffDays === 2) df = 'Yesterday';
+  const diffDays = d2Days - d1Days;
+
+  if (diffDays === 0) df = 'Today';
+  if (diffDays === 1) df = 'Yesterday';
 
   return (
     <div className="newDayDiv">

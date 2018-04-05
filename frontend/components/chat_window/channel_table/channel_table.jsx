@@ -54,27 +54,22 @@ export class ChannelTable extends React.Component {
     return (
       <div className="ChannelTableContainer">
 
-        <div
-          id="dropdown"
-          className={Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}
-          >
+        <div id="dropdown"
+            className={Boolean(this.state.dropdown) ? "toggleDropdown" : "toggleDropdown hidden"}>
           <div className="ImageSubmitWrapper">
-            <div>
-                <img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img>
-            </div>
+
+            <div><img id="iconpreview" height="45px" width="45x" src={this.state.imageUrl}></img></div>
+
             <label htmlFor="fileUploadInput" className="fileUploadInputLabel">
-              <span>
-                Choose a photo!
-              </span>
+              <span>Choose a photo!</span>
             </label>
             <input id="fileUploadInput"
               onChange={this.handleFileUpload}
                type='file'></input>
-             <div
-               className="imageSubmitDiv"
-               onClick={this.handleSubmit}>
+             <div className="imageSubmitDiv" onClick={this.handleSubmit}>
                Submit!
              </div>
+
           </div>
           <div className="LogoutButton" onClick={this.props.logout}>Logout!</div>
         </div>
