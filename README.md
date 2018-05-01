@@ -4,7 +4,7 @@
 
 ___
 
-[![Screen_Shot_2018-03-16_at_9.49.25_AM.png](https://s10.postimg.org/lf4ma1ik9/Screen_Shot_2018-03-16_at_9.49.25_AM.png)](https://postimg.org/image/olz5to305/)
+![Screen_Shot](https://raw.githubusercontent.com/rictorlome/slim/master/app/assets/images/Screen%20Shot%202018-05-01%20at%209.39.00%20AM.png)
 ___
 
 ## Description
