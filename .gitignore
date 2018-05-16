@@ -25,4 +25,5 @@ bundle.js.map
 npm-debug.log
 
 # Ignore application configuration
+slimbot-420bc02053ca.json
 /config/application.yml
