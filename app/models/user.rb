@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
   after_create :join_general
+  after_create :dm_slimbot
 
   has_attached_file :image, default_url: "missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
@@ -55,9 +56,17 @@ class User < ApplicationRecord
   end
 
   def join_general
-    #Make sure general is in the SEED file.#
+    #Make sure general is in the SEED file.
     general = Channel.find_by(title: 'general')
     Participation.create(member_id: self.id, channel_id: general.id) if general
+  end
+
+  def dm_slimbot
+    #Make sure slimbot is in the SEED file.
+    slimbot = User.find_by(username: 'slimbot')
+    ch = self.created_channels.create(is_dm: true, title: [slimbot.username,self.username].join(', '))
+    Participation.create(member_id: slimbot.id, channel_id: ch.id)
+    Message.create(body: "Hello, I'm a robot. Please talk to me.",  author_id: slimbot.id, channel_id: ch.id)
   end
 
 end
