@@ -25,7 +25,7 @@ class QuerySlimbotJob < ApplicationJob
       "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-rpfluq%40slimbot-e6c6a.iam.gserviceaccount.com"
     }
 
-    session_code = 'session_number_' + message.id.to_s
+    session_code = 'session_number_' + message.author_id.to_s
     session_client = Google::Cloud::Dialogflow::V2::Sessions.new credentials: k
     formatted_session = Google::Cloud::Dialogflow::V2::SessionsClient.session_path(ENV['dflow_project_id'], session_code)
     last_message = message.body
