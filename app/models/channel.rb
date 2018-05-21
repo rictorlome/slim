@@ -30,7 +30,8 @@ class Channel < ApplicationRecord
   end
 
   def is_dm?
-    self.is_dm
+    slimbot_dm = (self.title.split(', ').include?('slimbot') && self.title.split(', ').length == 2)
+    self.is_dm && !slimbot_dm
   end
 
 end
